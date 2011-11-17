@@ -7,8 +7,13 @@ class Number{
 		$perihal=$format['perihal'];
 		$no_last = $noprefix+1;
 		$num = str_pad($no_last,4,'0',STR_PAD_LEFT);
-
-		return $num."/POLTEKOM/".$divisi."/".$perihal."/".date("m.Y");
+		
+		if($perihal!=""){
+			return $num."/POLTEKOM/".$divisi."/".$perihal."/".date("m.Y");
+		}else{
+			return $num."/POLTEKOM/".$divisi."/".date("m.Y");
+		}
+		
 	}
 }
 
