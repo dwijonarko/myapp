@@ -3,7 +3,7 @@ class Mpmb extends CI_Model{
 	function __construct(){
 		parent::__construct();
 	}
-	
+
 	function general(){
 		$data['header']		= "FORMULIR";
 		$data['subheader'] 	= "PENDAFTARAN MAHASISWA BARU <br> POLITEKNIK KOTA MALANG";
@@ -16,13 +16,13 @@ class Mpmb extends CI_Model{
 								"TI"=>"Teknik Informatika",
 								"TM"=>"Teknik Mekatronika",
 								"TT"=>"Teknik Telekomunikasi"
-							);
+		);
 		$data['jurusan_sma']= array(
 								"-"=>"--Pilih Jurusan--",
 								"IPA"=>"IPA",
 								"IPS"=>"IPS",
 								"lainnya"=>"Lainnya"
-							);
+		);
 		$data['agama']		= array(
 								"ISLAM" => "ISLAM",
 								"KRISTEN"=> "KRISTEN",
@@ -30,12 +30,12 @@ class Mpmb extends CI_Model{
 								"HINDU"=>"HINDU",
 								"BUDHA"=>"BUDHA",
 								"LAIN"	=>"LAINNYA"
-							);
-		
+		);
+
 		for ($i=1;$i<=31;$i++){
 			$data['date'][$i]=$i;
 		}
-		
+
 		$data['month']=array(
 								"Januari"=>"Januari",
 								"Februari"=>"Februari",
@@ -50,11 +50,11 @@ class Mpmb extends CI_Model{
 								"November"=>"November",
 								"Desember"=>"Desember"
 		);
-		
+
 		for ($i=1980;$i<=1995;$i++){
 			$data['year'][$i]=$i;
 		}
-		
+
 		$data['input_nun']				= array('name'=>'nilai_un','size'=>15,'class'=>'input');
 		$data['input_no_pendaftaran']	= array('name'=>'no_pendaftaran','size'=>30,'class'=>'input');
 		$data['input_nama_lengkap']		= array('name'=>'nama_lengkap','size'=>50,'class'=>'input');
@@ -77,50 +77,51 @@ class Mpmb extends CI_Model{
 		$data['input_jenis_info']		= array('name'=>'jenis_info[]','class'=>'input');
 		$data['input_biaya_lainnya']	= array('name'=>'biaya_lainnya', 'size'=>50,'class'=>'input');
 		$data['input_info_lainnya']	= array('name'=>'info_lainnya', 'size'=>50,'class'=>'input');
-		
+
 		return $data;
 	}
-	
-	function save(){
+
+	function validate(){
 		$config = array(
-					array(
+		array(
 					'field'   => 'nama_lengkap', 
 		            'label'   => 'Nama Lengkap', 
 		            'rules'   => 'required'
 		));
-		
-		$this->form_validation->set_rules($config);
-		if ($this->form_validation->run() == TRUE){
-			echo $this->input->post('pilihan_1')."<br>";
-			echo $this->input->post('pilihan_2')."<br>";
-			echo $this->input->post('pilihan_3')."<br>";
-			echo $this->input->post('nama_lengkap')."<br>";
-			echo $this->input->post('jenis_kelamin')."<br>";
-			echo $this->input->post('tempat_lahir')."<br>";
-			echo $this->input->post('tanggal')."-";
-			echo $this->input->post('bulan')."-";
-			echo $this->input->post('tahun')."<br>";
-			echo $this->input->post('agama')."<br>";
-			echo $this->input->post('alamat_asal')."<br>";
-			echo $this->input->post('alamat_sekarang')."<br>";
-			echo $this->input->post('no_telp')."<br>";
-			echo $this->input->post('email')."<br>";
-			echo $this->input->post('asal_sekolah')."<br>";
-			echo $this->input->post('tahun_lulus')."<br>";
-			echo $this->input->post('jurusan_sma')."<br>";
-			echo $this->input->post('nilai_un')."<br>";
-			echo $this->input->post('nama_ayah')."<br>";
-			echo $this->input->post('pekerjaan_ayah')."<br>";
-			echo $this->input->post('nama_ibu')."<br>";
-			echo $this->input->post('pekerjaan_ibu')."<br>";
-			echo $this->input->post('alamat_orang_tua')."<br>";
-			echo $this->input->post('no_telp_orang_tua')."<br>";
-			$jenis_biaya = $this->input->post('jenis_biaya');
-			$biaya = implode(",",$jenis_biaya);
-			echo $biaya."<br>";
-			$jenis_info = $this->input->post('jenis_info');
-			$info = implode(",",$jenis_info);
-			echo $info."<br>";
-		}
+
+		return $this->form_validation->set_rules($config);
+	}
+	
+	function save(){
+		echo $this->input->post('pilihan_1')."<br>";
+		echo $this->input->post('pilihan_2')."<br>";
+		echo $this->input->post('pilihan_3')."<br>";
+		echo $this->input->post('nama_lengkap')."<br>";
+		echo $this->input->post('jenis_kelamin')."<br>";
+		echo $this->input->post('tempat_lahir')."<br>";
+		echo $this->input->post('tanggal')."-";
+		echo $this->input->post('bulan')."-";
+		echo $this->input->post('tahun')."<br>";
+		echo $this->input->post('agama')."<br>";
+		echo $this->input->post('alamat_asal')."<br>";
+		echo $this->input->post('alamat_sekarang')."<br>";
+		echo $this->input->post('no_telp')."<br>";
+		echo $this->input->post('email')."<br>";
+		echo $this->input->post('asal_sekolah')."<br>";
+		echo $this->input->post('tahun_lulus')."<br>";
+		echo $this->input->post('jurusan_sma')."<br>";
+		echo $this->input->post('nilai_un')."<br>";
+		echo $this->input->post('nama_ayah')."<br>";
+		echo $this->input->post('pekerjaan_ayah')."<br>";
+		echo $this->input->post('nama_ibu')."<br>";
+		echo $this->input->post('pekerjaan_ibu')."<br>";
+		echo $this->input->post('alamat_orang_tua')."<br>";
+		echo $this->input->post('no_telp_orang_tua')."<br>";
+		$jenis_biaya = $this->input->post('jenis_biaya');
+		$biaya = implode(",",$jenis_biaya);
+		echo $biaya."<br>";
+		$jenis_info = $this->input->post('jenis_info');
+		$info = implode(",",$jenis_info);
+		echo $info."<br>";
 	}
 }

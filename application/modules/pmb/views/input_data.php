@@ -29,7 +29,7 @@
 			<legend>II. Data Pribadi</legend>
 			<table  class="table_input">
 				<tr>
-					<td class="left_td">Nama Lengkap</td><td>:</td><td><?php echo form_input($input_nama_lengkap);?></td>
+					<td class="left_td">Nama Lengkap</td><td>:</td><td><?php echo form_input($input_nama_lengkap);?><?php echo form_error('nama_lengkap'); ?></td>
 				</tr>
 				<tr>
 					<td class="left_td">Jenis Kelamin</td><td>:</td><td><?php echo form_radio($input_jenis_kelamin,'L');?>Laki-laki <?php echo form_radio($input_jenis_kelamin,'P');?>Perempuan</td>
