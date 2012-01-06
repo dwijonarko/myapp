@@ -143,6 +143,9 @@ a.down-big {
     font-size: 16px;
     padding: 10px 15px;
 }
+legend{
+	font-weight: bold;
+}
 label {
     font-family: Arial, Verdana;
     text-shadow: 2px 2px 2px #ccc;
@@ -214,9 +217,35 @@ label {
 .left{
 	border-left: 1px solid;
 }
-.error_field{
-	border:1px solid;
+
+body{
+    font-family:Arial, Helvetica, sans-serif; 
+    font-size:13px;
 }
-legend{
-	font-weight: bold;
+.info, .success, .warning, .error, .validation {
+    border: 1px solid;
+    margin: 10px 0px 0px 5px;
+    padding:5px 100px 5px 40px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+.info {
+    color: #00529B;
+    background-color: #BDE5F8;
+    background-image: url('images/info.png');
+}
+.success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    background-image:url('images/success.png');
+}
+.warning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+    background-image: url('images/warning.png');
+}
+.error {
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('images/error.png');
 }

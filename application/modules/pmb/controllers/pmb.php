@@ -15,7 +15,7 @@ class Pmb extends CI_Controller{
 			$this->load->model('mpmb');
 			$this->mpmb->validate();
 			if ($this->form_validation->run() == TRUE){
-				$this->mpmb->validate();
+				$this->mpmb->save();
 			}else{
 				$data = $this->mpmb->general();
 				$this->load->view('input_data',$data);
