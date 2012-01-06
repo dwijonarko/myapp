@@ -5,6 +5,14 @@ class Mpmb extends CI_Model{
 	}
 
 	function general(){
+		$this->load->library('number');
+		$this->db->select_max('id','max_id');
+		$query = $this->db->get('mahasiswa_baru');
+		
+		$row = $query->row(); 
+		
+		$format['num']=$row->max_id;
+		$data['nomor_pendaftaran'] = $this->number->generate_pendaftaran($format);
 		$data['header']		= "FORMULIR";
 		$data['subheader'] 	= "PENDAFTARAN MAHASISWA BARU <br> POLITEKNIK KOTA MALANG";
 		$data['no_dokumen']	= "FRM.BAAK.05.01.00";
@@ -37,18 +45,18 @@ class Mpmb extends CI_Model{
 		}
 
 		$data['month']=array(
-								"Januari"=>"Januari",
-								"Februari"=>"Februari",
-								"Maret"=>"Maret",
-								"April"=>"April",
-								"Mei"=>"Mei",
-								"Juni"=>"Juni",
-								"Juli"=>"Juli",
-								"Agustus"=>"Agustus",
-								"September"=>"September",
-								"Oktober"=>"Oktober",
-								"November"=>"November",
-								"Desember"=>"Desember"
+								"1"=>"Januari",
+								"2"=>"Februari",
+								"3"=>"Maret",
+								"4"=>"April",
+								"5"=>"Mei",
+								"6"=>"Juni",
+								"7"=>"Juli",
+								"8"=>"Agustus",
+								"9"=>"September",
+								"10"=>"Oktober",
+								"11"=>"November",
+								"12"=>"Desember"
 		);
 
 		for ($i=1980;$i<=1995;$i++){
@@ -86,142 +94,142 @@ class Mpmb extends CI_Model{
 				array(
 							'field'   => 'pilihan_1', 
 							'label'   => 'Pilihan 1', 
-							'rules'   => 'exact_length[2]',
+							'rules'   => 'exact_length[2]|xss_clean',
 				),
 				array(
 							'field'   => 'pilihan_2', 
 							'label'   => 'Pilihan 2', 
-							'rules'   => 'exact_length[2]',
+							'rules'   => 'exact_length[2]|xss_clean',
 				),
 				array(
 							'field'   => 'pilihan_3', 
 							'label'   => 'Pilihan 3', 
-							'rules'   => 'exact_length[2]',
+							'rules'   => 'exact_length[2]|xss_clean',
 				),
 				array(
 							'field'   => 'nama_lengkap', 
 						    'label'   => 'Nama Lengkap', 
-						    'rules'   => 'required',
+						    'rules'   => 'required|xss_clean',
 				),
 				array(
 							'field'   => 'jenis_kelamin', 
 						    'label'   => 'Jenis kelamin', 
-						    'rules'   => 'required',
+						    'rules'   => 'required|xss_clean',
 				),
 				array(
 							'field'   => 'tempat_lahir', 
 							'label'   => 'Tempat Lahir', 
-							'rules'   => 'required',
+							'rules'   => 'required|xss_clean',
 				),
 				array(
 							'field'   => 'tanggal', 
 							'label'   => 'tanggal', 
-							'rules'   => '',
+							'rules'   => 'xss_clean',
 				),
 				array(
 							'field'   => 'bulan', 
 							'label'   => 'bulan', 
-							'rules'   => '',
+							'rules'   => 'xss_clean',
 				),
 				array(
 							'field'   => 'tahun', 
 							'label'   => 'tahun', 
-							'rules'   => '',
+							'rules'   => 'xss_clean',
 				),
 				array(
 							'field'   => 'agama', 
 							'label'   => 'agama', 
-							'rules'   => '',
+							'rules'   => 'xss_clean',
 				),
 				array(
 							'field'   => 'alamat_asal', 
 							'label'   => 'Alamat Asal', 
-							'rules'   => 'required',
+							'rules'   => 'required|xss_clean',
 				),
 				array(
 							'field'   => 'alamat_sekarang', 
 							'label'   => 'Alamat Sekarang', 
-							'rules'   => 'required',
+							'rules'   => 'required|xss_clean',
 				),
 				array(
 							'field'   => 'no_telp', 
 							'label'   => 'Nomor Telepon / HP', 
-							'rules'   => 'required|alpha_dash',
+							'rules'   => 'required|alpha_dash|xss_clean',
 				),
 				array(
 							'field'   => 'email', 
 							'label'   => 'Email', 
-							'rules'   => 'required|valid_email',
+							'rules'   => 'required|valid_email|xss_clean',
 				),
 				array(
 							'field'   => 'asal_sekolah', 
 							'label'   => 'Asal Sekolah', 
-							'rules'   => 'required',
+							'rules'   => 'required|xss_clean',
 				),
 				array(
 							'field'   => 'tahun_lulus', 
 							'label'   => 'Tahun Lulus', 
-							'rules'   => 'required|numeric|min_length[4]|max_length[4]',
+							'rules'   => 'required|numeric|min_length[4]|max_length[4]|xss_clean',
 				),
 				array(
 							'field'   => 'jurusan_sma', 
 							'label'   => 'Jurusan SMA', 
-							'rules'   => '',
+							'rules'   => 'xss_clean',
 				),
 				array(
 							'field'   => 'nilai_un', 
 							'label'   => 'Nilai UN', 
-							'rules'   => 'required|min_length[2]|max_length[5]',
+							'rules'   => 'required|min_length[2]|max_length[5]|xss_clean',
 				),
 				array(
 							'field'   => 'nama_ayah', 
 							'label'   => 'Nama Ayah / Wali', 
-							'rules'   => 'required',
+							'rules'   => 'required|xss_clean',
 				),
 				array(
 							'field'   => 'pekerjaan_ayah', 
 							'label'   => 'Pekerjaan Ayah / Wali', 
-							'rules'   => 'required',
+							'rules'   => 'required|xss_clean',
 				),
 				array(
 							'field'   => 'nama_ibu', 
 							'label'   => 'Nama Ibu / Wali', 
-							'rules'   => 'required',
+							'rules'   => 'required|xss_clean',
 				),
 				array(
 							'field'   => 'pekerjaan_ibu', 
 							'label'   => 'Pekerjaan Ibu / Wali', 
-							'rules'   => 'required',
+							'rules'   => 'required|xss_clean',
 				),
 				array(
 							'field'   => 'alamat_orang_tua', 
 							'label'   => 'Alamat Orang Tua / Wali', 
-							'rules'   => 'required',
+							'rules'   => 'required|xss_clean',
 				),
 				array(
 							'field'   => 'no_telp_orang_tua', 
 							'label'   => 'Nomor Telepon / HP orang tua / Wali', 
-							'rules'   => 'required|alpha_dash',
+							'rules'   => 'required|alpha_dash|xss_clean',
 				),
 				array(
 							'field'   => 'jenis_biaya', 
 							'label'   => 'Jenis Biaya', 
-							'rules'   => '',
+							'rules'   => 'xss_clean',
 				),
 				array(
 							'field'   => 'jenis_info', 
 							'label'   => 'Jenis Info', 
-							'rules'   => '',
+							'rules'   => 'xss_clean',
 				),
 				array(
 							'field'   => 'biaya_lainnya', 
 							'label'   => 'biaya_lainnya', 
-							'rules'   => '',
+							'rules'   => 'xss_clean',
 				),
 				array(
 							'field'   => 'info_lainnya', 
 							'label'   => 'info_lainnya', 
-							'rules'   => '',
+							'rules'   => 'xss_clean',
 				),
 
 		);
@@ -233,37 +241,43 @@ class Mpmb extends CI_Model{
 	}
 
 	function save(){
-		echo $this->input->post('pilihan_1')."<br>";
-		echo $this->input->post('pilihan_2')."<br>";
-		echo $this->input->post('pilihan_3')."<br>";
-		echo $this->input->post('nama_lengkap')."<br>";
-		echo $this->input->post('jenis_kelamin')."<br>";
-		echo $this->input->post('tempat_lahir')."<br>";
-		echo $this->input->post('tanggal')."-";
-		echo $this->input->post('bulan')."-";
-		echo $this->input->post('tahun')."<br>";
-		echo $this->input->post('agama')."<br>";
-		echo $this->input->post('alamat_asal')."<br>";
-		echo $this->input->post('alamat_sekarang')."<br>";
-		echo $this->input->post('no_telp')."<br>";
-		echo $this->input->post('email')."<br>";
-		echo $this->input->post('asal_sekolah')."<br>";
-		echo $this->input->post('tahun_lulus')."<br>";
-		echo $this->input->post('jurusan_sma')."<br>";
-		echo $this->input->post('nilai_un')."<br>";
-		echo $this->input->post('nama_ayah')."<br>";
-		echo $this->input->post('pekerjaan_ayah')."<br>";
-		echo $this->input->post('nama_ibu')."<br>";
-		echo $this->input->post('pekerjaan_ibu')."<br>";
-		echo $this->input->post('alamat_orang_tua')."<br>";
-		echo $this->input->post('no_telp_orang_tua')."<br>";
+		
+		$tanggal_lahir = $this->input->post('tahun')."-".$this->input->post('bulan')."-".$this->input->post('tanggal');
 		$jenis_biaya = $this->input->post('jenis_biaya');
 		$biaya = implode(",",$jenis_biaya);
-		echo $biaya."<br>";
-		echo $this->input->post('biaya_lainnya')."<br>";
 		$jenis_info = $this->input->post('jenis_info');
 		$info = implode(",",$jenis_info);
-		echo $info."<br>";
-		echo $this->input->post('info_lainnya')."<br>";
+		
+		$data = array(
+			'no_pendaftaran'=> $this->input->post('no_pendaftaran') ,
+		   	'pilihan_1' 	=> $this->input->post('pilihan_1') ,
+		   	'pilihan_2' 	=> $this->input->post('pilihan_2') ,
+		   	'pilihan_3' 	=> $this->input->post('pilihan_3') ,
+			'nama_lengkap' 	=> $this->input->post('nama_lengkap'),
+			'jenis_kelamin' => $this->input->post('jenis_kelamin'),
+			'tempat_lahir' 	=> $this->input->post('tempat_lahir'),
+			'tempat_lahir' 	=> $tanggal_lahir,
+			'agama' 		=> $this->input->post('agama'),
+			'alamat_asal' 	=> $this->input->post('alamat_asal'),
+			'alamat_sekarang'=> $this->input->post('alamat_sekarang'),
+			'no_telp' 		=> $this->input->post('no_telp'),
+			'email' 		=> $this->input->post('email'),
+			'asal_sekolah'	=> $this->input->post('asal_sekolah'),
+			'tahun_lulus' 	=> $this->input->post('tahun_lulus'),
+			'jurusan_sma'	=> $this->input->post('jurusan_sma'),
+			'nilai_un'		=> $this->input->post('nilai_un'),
+			'nama_ayah'		=> $this->input->post('nama_ayah'),
+			'pekerjaan_ayah'=> $this->input->post('pekerjaan_ayah'),
+			'pekerjaan_ibu'	=> $this->input->post('nama_ibu'),
+			'alamat_orang_tua'=> $this->input->post('alamat_orang_tua'),
+			'no_telp_orang_tua'	=> $this->input->post('no_telp_orang_tua'),
+			'jenis_biaya'	=> $biaya,
+			'biaya_lainnya'=> $this->input->post('biaya_lainnya'),
+			'jenis_info'=> $info,
+			'info_lainnya'=> $this->input->post('info_lainnya')
+		);
+		
+		$this->db->insert('mahasiswa_baru', $data);
+		
 	}
 }

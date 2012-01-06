@@ -15,5 +15,13 @@ class Number{
 		}
 		
 	}
+	
+	function generate_pendaftaran($format=array()) {
+		$noprefix=$format['num'];
+		$no_last = $noprefix+1;
+		$num = str_pad($no_last,4,'0',STR_PAD_LEFT);
+		return $num.".POLTEKOM.PMB.".date("Y");
+		
+	}
 }
 

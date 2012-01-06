@@ -16,6 +16,7 @@ class Pmb extends CI_Controller{
 			$this->mpmb->validate();
 			if ($this->form_validation->run() == TRUE){
 				$this->mpmb->save();
+				redirect(site_url().'/pmb/success');
 			}else{
 				$data = $this->mpmb->general();
 				$this->load->view('input_data',$data);
@@ -23,5 +24,9 @@ class Pmb extends CI_Controller{
 		}else{
 			redirect(site_url().'/pmb','refresh');
 		}
+	}
+	
+	public function success(){
+		echo "sukses";
 	}
 }

@@ -12,6 +12,7 @@
 		<?php echo "<h2>".$subheader."</h2>"; ?>
 	</span>
 	<?php echo form_open(site_url()."/pmb/submit","action=POST") ?>
+	<?php echo form_hidden("no_pendaftaran",$nomor_pendaftaran)?>
 		<fieldset>
 			<legend>I. Program Studi Pilihan</legend>
 			<table class="table_input">
@@ -99,7 +100,7 @@
 			<?php echo form_checkbox($input_jenis_biaya,'1',set_checkbox('jenis_biaya', '1'));?>Orang Tua 
 			<?php echo form_checkbox($input_jenis_biaya,'2',set_checkbox('jenis_biaya', '2'));?>Mandiri
 			<?php echo form_checkbox($input_jenis_biaya,'3',set_checkbox('jenis_biaya', '3'));?>Beasiswa/Sponsor
-			<?php echo form_checkbox($input_jenis_biaya,'4',set_checkbox('jenis_biaya', '4'));?>Lainnya <?php echo form_input($input_biaya_lainnya)?>
+			<?php echo form_checkbox($input_jenis_biaya,'4',set_checkbox('jenis_biaya', '4',TRUE));?>Lainnya <?php echo form_input($input_biaya_lainnya)?>
 		</fieldset>
 		<fieldset>
 			<legend>V. Lain-lain</legend>
@@ -108,7 +109,7 @@
 			<?php echo form_checkbox($input_jenis_info,'2',set_checkbox('jenis_info', '2'));?>Sekolah
 			<?php echo form_checkbox($input_jenis_info,'3',set_checkbox('jenis_info', '3'));?>Koran
 			<?php echo form_checkbox($input_jenis_info,'4',set_checkbox('jenis_info', '4'));?>Teman / Saudara
-			<?php echo form_checkbox($input_jenis_info,'5',set_checkbox('jenis_info', '5'));?>Lainnya <?php echo form_input($input_info_lainnya)?>
+			<?php echo form_checkbox($input_jenis_info,'5',set_checkbox('jenis_info', '5',TRUE));?>Lainnya <?php echo form_input($input_info_lainnya)?>
 		</fieldset>
 		<div id="center">
 			<?php 
