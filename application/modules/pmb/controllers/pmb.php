@@ -2,21 +2,20 @@
 class Pmb extends CI_Controller{
 	function __construct(){
 		parent::__construct();
+		$this->load->model('mpmb');
 	}
 	
 	public function index(){
-		$this->load->model('mpmb');
 		$data = $this->mpmb->general();
 		$this->load->view('input_data',$data);	
 	}
 	
 	public function submit(){
 		if($this->input->post('submit')){
-			$this->load->model('mpmb');
 			$this->mpmb->validate();
 			if ($this->form_validation->run() == TRUE){
-				$this->mpmb->save();
-				redirect(site_url().'/pmb/success');
+				//$this->mpmb->save();
+				redirect(site_url().'/pmb/success/'.$this->input->post('no_pendaftaran'));
 			}else{
 				$data = $this->mpmb->general();
 				$this->load->view('input_data',$data);
@@ -26,7 +25,13 @@ class Pmb extends CI_Controller{
 		}
 	}
 	
-	public function success(){
-		echo "sukses";
+	public function success($no_pendaftaran){
+		if(ISSET($no_pendaftaran)){
+			$data = $this->mpmb->get_mahasiswa($no_pendaftaran); 
+			$this->load->view('pmb/show',$data);
+			
+		}else{
+			redirect(redirect(site_url().'/pmb','refresh'));
+		}
 	}
 }
