@@ -1,8 +1,17 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
 class Mpmb extends CI_Model{
+	private $prodi	= array( "-"=>"Plih Jurusan","TI"=>"Teknik Informatika", "TM"=>"Teknik Mekatronika","TT"=>"Teknik Telekomunikasi");
+	private	$jurusan_sma= array("IPA"=>"IPA","IPS"=>"IPS","lainnya"=>"Lainnya");
+	private $agama = array("ISLAM" => "ISLAM","KRISTEN"=> "KRISTEN","KATOLIK"=> "KATOLIK","HINDU"=>"HINDU","BUDHA"=>"BUDHA","LAIN"	=>"LAINNYA");
+	private $months= array("1"=>"Januari","2"=>"Februari","3"=>"Maret","4"=>"April","5"=>"Mei","6"=>"Juni","7"=>"Juli","8"=>"Agustus","9"=>"September","10"=>"Oktober","11"=>"November","12"=>"Desember");
+	private $kelamin=array("L"=>"Pria","P"=>"Wanita");
 	function __construct(){
 		parent::__construct();
+
 	}
+
+
 
 	function general(){
 		$this->load->library('number');
@@ -19,50 +28,19 @@ class Mpmb extends CI_Model{
 		$data['tanggal']	= "04-01-2012";
 		$data['revisi']		= "-";
 		$data['halaman']	= "1";
-		$data['jurusan']	= array(
-								"-"=>"--Pilih jurusan--",
-								"TI"=>"Teknik Informatika",
-								"TM"=>"Teknik Mekatronika",
-								"TT"=>"Teknik Telekomunikasi"
-		);
-		$data['jurusan_sma']= array(
-								"-"=>"--Pilih Jurusan--",
-								"IPA"=>"IPA",
-								"IPS"=>"IPS",
-								"lainnya"=>"Lainnya"
-		);
-		$data['agama']		= array(
-								"ISLAM" => "ISLAM",
-								"KRISTEN"=> "KRISTEN",
-								"KATOLIK"=> "KATOLIK",
-								"HINDU"=>"HINDU",
-								"BUDHA"=>"BUDHA",
-								"LAIN"	=>"LAINNYA"
-		);
+		$data['jurusan']	= $this->prodi;
+		$data['jurusan_sma']= $this->jurusan_sma;
+		$data['agama']		= $this->agama;
 
 		for ($i=1;$i<=31;$i++){
 			$data['date'][$i]=$i;
 		}
 
-		$data['month']=array(
-								"1"=>"Januari",
-								"2"=>"Februari",
-								"3"=>"Maret",
-								"4"=>"April",
-								"5"=>"Mei",
-								"6"=>"Juni",
-								"7"=>"Juli",
-								"8"=>"Agustus",
-								"9"=>"September",
-								"10"=>"Oktober",
-								"11"=>"November",
-								"12"=>"Desember"
-		);
+		$data['month']=$this->months;
 
 		for ($i=1980;$i<=1995;$i++){
 			$data['year'][$i]=$i;
 		}
-
 
 		$data['input_no_pendaftaran']	= array('name'=>'no_pendaftaran','size'=>30,'class'=>'input','value'=>set_value('no_pendaftaran'));
 		$data['input_nama_lengkap']		= array('name'=>'nama_lengkap','size'=>50,'class'=>'input','value'=>set_value('nama_lengkap'));
@@ -92,143 +70,143 @@ class Mpmb extends CI_Model{
 	function validate(){
 		$config = array(
 		array(
-							'field'   => 'pilihan_1', 
-							'label'   => 'Pilihan 1', 
+							'field'   => 'pilihan_1',
+							'label'   => 'Pilihan 1',
 							'rules'   => 'exact_length[2]|xss_clean',
 		),
 		array(
-							'field'   => 'pilihan_2', 
-							'label'   => 'Pilihan 2', 
+							'field'   => 'pilihan_2',
+							'label'   => 'Pilihan 2',
 							'rules'   => 'exact_length[2]|xss_clean',
 		),
 		array(
-							'field'   => 'pilihan_3', 
-							'label'   => 'Pilihan 3', 
+							'field'   => 'pilihan_3',
+							'label'   => 'Pilihan 3',
 							'rules'   => 'exact_length[2]|xss_clean',
 		),
 		array(
-							'field'   => 'nama_lengkap', 
-						    'label'   => 'Nama Lengkap', 
+							'field'   => 'nama_lengkap',
+						    'label'   => 'Nama Lengkap',
 						    'rules'   => 'required|xss_clean',
 		),
 		array(
-							'field'   => 'jenis_kelamin', 
-						    'label'   => 'Jenis kelamin', 
+							'field'   => 'jenis_kelamin',
+						    'label'   => 'Jenis kelamin',
 						    'rules'   => 'required|xss_clean',
 		),
 		array(
-							'field'   => 'tempat_lahir', 
-							'label'   => 'Tempat Lahir', 
+							'field'   => 'tempat_lahir',
+							'label'   => 'Tempat Lahir',
 							'rules'   => 'required|xss_clean',
 		),
 		array(
-							'field'   => 'tanggal', 
-							'label'   => 'tanggal', 
+							'field'   => 'tanggal',
+							'label'   => 'tanggal',
 							'rules'   => 'xss_clean',
 		),
 		array(
-							'field'   => 'bulan', 
-							'label'   => 'bulan', 
+							'field'   => 'bulan',
+							'label'   => 'bulan',
 							'rules'   => 'xss_clean',
 		),
 		array(
-							'field'   => 'tahun', 
-							'label'   => 'tahun', 
+							'field'   => 'tahun',
+							'label'   => 'tahun',
 							'rules'   => 'xss_clean',
 		),
 		array(
-							'field'   => 'agama', 
-							'label'   => 'agama', 
+							'field'   => 'agama',
+							'label'   => 'agama',
 							'rules'   => 'xss_clean',
 		),
 		array(
-							'field'   => 'alamat_asal', 
-							'label'   => 'Alamat Asal', 
+							'field'   => 'alamat_asal',
+							'label'   => 'Alamat Asal',
 							'rules'   => 'required|xss_clean',
 		),
 		array(
-							'field'   => 'alamat_sekarang', 
-							'label'   => 'Alamat Sekarang', 
+							'field'   => 'alamat_sekarang',
+							'label'   => 'Alamat Sekarang',
 							'rules'   => 'required|xss_clean',
 		),
 		array(
-							'field'   => 'no_telp', 
-							'label'   => 'Nomor Telepon / HP', 
+							'field'   => 'no_telp',
+							'label'   => 'Nomor Telepon / HP',
 							'rules'   => 'required|alpha_dash|xss_clean',
 		),
 		array(
-							'field'   => 'email', 
-							'label'   => 'Email', 
+							'field'   => 'email',
+							'label'   => 'Email',
 							'rules'   => 'required|valid_email|xss_clean',
 		),
 		array(
-							'field'   => 'asal_sekolah', 
-							'label'   => 'Asal Sekolah', 
+							'field'   => 'asal_sekolah',
+							'label'   => 'Asal Sekolah',
 							'rules'   => 'required|xss_clean',
 		),
 		array(
-							'field'   => 'tahun_lulus', 
-							'label'   => 'Tahun Lulus', 
+							'field'   => 'tahun_lulus',
+							'label'   => 'Tahun Lulus',
 							'rules'   => 'required|numeric|min_length[4]|max_length[4]|xss_clean',
 		),
 		array(
-							'field'   => 'jurusan_sma', 
-							'label'   => 'Jurusan SMA', 
+							'field'   => 'jurusan_sma',
+							'label'   => 'Jurusan SMA',
 							'rules'   => 'xss_clean',
 		),
 		array(
-							'field'   => 'nilai_un', 
-							'label'   => 'Nilai UN', 
+							'field'   => 'nilai_un',
+							'label'   => 'Nilai UN',
 							'rules'   => 'required|min_length[2]|max_length[5]|xss_clean',
 		),
 		array(
-							'field'   => 'nama_ayah', 
-							'label'   => 'Nama Ayah / Wali', 
+							'field'   => 'nama_ayah',
+							'label'   => 'Nama Ayah / Wali',
 							'rules'   => 'required|xss_clean',
 		),
 		array(
-							'field'   => 'pekerjaan_ayah', 
-							'label'   => 'Pekerjaan Ayah / Wali', 
+							'field'   => 'pekerjaan_ayah',
+							'label'   => 'Pekerjaan Ayah / Wali',
 							'rules'   => 'required|xss_clean',
 		),
 		array(
-							'field'   => 'nama_ibu', 
-							'label'   => 'Nama Ibu / Wali', 
+							'field'   => 'nama_ibu',
+							'label'   => 'Nama Ibu / Wali',
 							'rules'   => 'required|xss_clean',
 		),
 		array(
-							'field'   => 'pekerjaan_ibu', 
-							'label'   => 'Pekerjaan Ibu / Wali', 
+							'field'   => 'pekerjaan_ibu',
+							'label'   => 'Pekerjaan Ibu / Wali',
 							'rules'   => 'required|xss_clean',
 		),
 		array(
-							'field'   => 'alamat_orang_tua', 
-							'label'   => 'Alamat Orang Tua / Wali', 
+							'field'   => 'alamat_orang_tua',
+							'label'   => 'Alamat Orang Tua / Wali',
 							'rules'   => 'required|xss_clean',
 		),
 		array(
-							'field'   => 'no_telp_orang_tua', 
-							'label'   => 'Nomor Telepon / HP orang tua / Wali', 
+							'field'   => 'no_telp_orang_tua',
+							'label'   => 'Nomor Telepon / HP orang tua / Wali',
 							'rules'   => 'required|alpha_dash|xss_clean',
 		),
 		array(
-							'field'   => 'jenis_biaya', 
-							'label'   => 'Jenis Biaya', 
+							'field'   => 'jenis_biaya',
+							'label'   => 'Jenis Biaya',
 							'rules'   => 'xss_clean',
 		),
 		array(
-							'field'   => 'jenis_info', 
-							'label'   => 'Jenis Info', 
+							'field'   => 'jenis_info',
+							'label'   => 'Jenis Info',
 							'rules'   => 'xss_clean',
 		),
 		array(
-							'field'   => 'biaya_lainnya', 
-							'label'   => 'biaya_lainnya', 
+							'field'   => 'biaya_lainnya',
+							'label'   => 'biaya_lainnya',
 							'rules'   => 'xss_clean',
 		),
 		array(
-							'field'   => 'info_lainnya', 
-							'label'   => 'info_lainnya', 
+							'field'   => 'info_lainnya',
+							'label'   => 'info_lainnya',
 							'rules'   => 'xss_clean',
 		),
 
@@ -250,9 +228,9 @@ class Mpmb extends CI_Model{
 
 		$data = array(
 			'no_pendaftaran'=> $this->input->post('no_pendaftaran') ,
-		   	'pilihan_1' 	=> $this->input->post('pilihan_1') ,
-		   	'pilihan_2' 	=> $this->input->post('pilihan_2') ,
-		   	'pilihan_3' 	=> $this->input->post('pilihan_3') ,
+			'pilihan_1' 	=> $this->input->post('pilihan_1') ,
+		 	'pilihan_2' 	=> $this->input->post('pilihan_2') ,
+		 	'pilihan_3' 	=> $this->input->post('pilihan_3') ,
 			'nama_lengkap' 	=> $this->input->post('nama_lengkap'),
 			'jenis_kelamin' => $this->input->post('jenis_kelamin'),
 			'tempat_lahir' 	=> $this->input->post('tempat_lahir'),
@@ -269,7 +247,7 @@ class Mpmb extends CI_Model{
 			'nama_ayah'		=> $this->input->post('nama_ayah'),
 			'pekerjaan_ayah'=> $this->input->post('pekerjaan_ayah'),
 			'nama_ibu'		=> $this->input->post('nama_ibu'),
-			'pekerjaan_ibu'	=> $this->input->post('nama_pekerjaan'),
+			'pekerjaan_ibu'	=> $this->input->post('pekerjaan_ibu'),
 			'alamat_orang_tua'=> $this->input->post('alamat_orang_tua'),
 			'no_telp_orang_tua'	=> $this->input->post('no_telp_orang_tua'),
 			'jenis_biaya'	=> $biaya,
@@ -284,18 +262,26 @@ class Mpmb extends CI_Model{
 
 	function get_mahasiswa($no_pendaftaran){
 		$query = $this->db->get_where('mahasiswa_baru', array('no_pendaftaran' => $no_pendaftaran));
-			
+
 		if ($query->num_rows() > 0){
 			$row = $query->row();
-			
+
+
+
+			$data['header']		= "FORMULIR";
+			$data['subheader'] 	= "PENDAFTARAN MAHASISWA BARU <br> POLITEKNIK KOTA MALANG";
+			$data['no_dokumen']	= "FRM.BAAK.05.01.00";
+			$data['tanggal']	= "04-01-2012";
+			$data['revisi']		= "-";
+			$data['halaman']	= "1";
 			$data['no_pendaftaran'] = $row->no_pendaftaran;
-			$data['pilihan_1'] = $row->pilihan_1;
-			$data['pilihan_2'] = $row->pilihan_2;
-			$data['pilihan_3'] = $row->pilihan_3;
+			$data['pilihan_1'] = $this->prodi[$row->pilihan_1];
+			$data['pilihan_2'] = $this->prodi[$row->pilihan_2];
+			$data['pilihan_3'] = $this->prodi[$row->pilihan_3];
 			$data['nama_lengkap'] = $row->nama_lengkap;
-			$data['jenis_kelamin'] = $row->jenis_kelamin;
+			$data['jenis_kelamin'] = $this->kelamin[$row->jenis_kelamin];
 			$data['tempat_lahir'] = $row->tempat_lahir;
-			$data['tanggal_lahir'] = $row->tanggal_lahir;
+			$data['tanggal_lahir'] = date('d M Y', strtotime($row->tanggal_lahir));
 			$data['agama'] = $row->agama;
 			$data['alamat_asal'] = $row->alamat_asal;
 			$data['alamat_sekarang'] = $row->alamat_sekarang;
@@ -315,7 +301,7 @@ class Mpmb extends CI_Model{
 			$data['biaya_lainnya'] = $row->biaya_lainnya;
 			$data['jenis_info'] = $row->jenis_info;
 			$data['info_lainnya'] = $row->info_lainnya;
-			
+
 			return $data;
 		}else{
 			redirect('pmb');

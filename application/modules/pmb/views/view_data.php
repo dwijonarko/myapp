@@ -1,44 +1,160 @@
 <!DOCTYPE >
 <html>
-	<head><title>PENDAFTARAN MAHASISWA BARU - POLITEKNIK KOTA MALANG</title></head>
-	<link rel="stylesheet" href="<?php echo base_url() ?>style/css.css" type="text/css"  media="screen" />
-	<script src="<?php echo base_url() ?>script/jquery.min.js" type="text/javascript"></script>
+	<head>
+		<title>PENDAFTARAN MAHASISWA BARU - POLITEKNIK KOTA MALANG</title>
+		<link rel="stylesheet" href="<?php echo base_url() ?>stylesheets/report.css" type="text/css"  media="screen" /></link>
+		<script src="<?php echo base_url() ?>javascripts/jquery.min.js" type="text/javascript"></script>
+	</head>
 	<body>
 	<div id="content">
-	<table class="table_input" >
+	<table class="form_header" >
 	<tr>
-		<td rowspan="2" class="top right"><img src="<?php echo base_url()?>images/logo-small.png" width=90px></td>
+		<td rowspan="2" class="left top right"><img class="img" src="<?php echo base_url()?>images/logo-small.png" width=60px></td>
 		<td rowspan="2" class="top right"><h1><?php echo $header; ?></h1></td>
-		<td class="top right">NO. DOKUMEN</td><td class="top">DISAHKAN</td>
+		<td class="top right">NO. DOKUMEN</td><td class="top right">DISAHKAN</td>
 	</tr>
 	<tr>
 		<td class="top right"><?php echo $no_dokumen;?></td>
-		<td class="top ">&nbsp;</td>
+		<td class="top right">&nbsp;</td>
 	</tr>
 	<tr>
-		<td colspan="2" rowspan="3" class="top right bottom"><h2><?php echo $subheader; ?></h2></td>
-		<td colspan="2" class="top" style="text-align:left;padding:5px;">Tanggal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 04-01-2012</td>
+		<td colspan="2" rowspan="3" class="left top right bottom"><h2><?php echo $subheader; ?></h2></td>
+		<td colspan="2" class="top right" style="text-align:left;padding-left:5px;">Tanggal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 04-01-2012</td>
 	</tr>
 	<tr>
-		<td colspan="2" class="top" style="text-align:left;padding:5px;">Revisi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: - </td>
+		<td colspan="2" class="top right" style="text-align:left;padding-left:5px;">Revisi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: - </td>
 	</tr>
 	<tr>
-		<td colspan="2" class="top bottom" style="text-align:left;padding:5px;">Halaman &nbsp;&nbsp;&nbsp;&nbsp;: 1</td>
+		<td colspan="2" class="top right bottom" style="text-align:left;padding-left:5px;">Halaman &nbsp;&nbsp;&nbsp;&nbsp;: 1</td>
 	</tr>
 	</table>
-	<table style="padding-left:20px;">
+	<fieldset>
+	<legend>I. Program Studi Pilihan</legend>
+		<table>
+			<tr>
+				<td>1. <?php echo $pilihan_1?></td><td>2. <?php echo $pilihan_2?></td><td>3. <?php echo $pilihan_3?></td>
+			</tr>
+		</table>
+	</fieldset>
+
+	<fieldset>
+	<legend>II. Data Pribadi</legend>
+		<table>
+			<tr>
+				<td class="field">Nama Lengkap </td><td>:&nbsp;<?php echo $nama_lengkap?></td>
+			</tr>
+			<tr>
+				<td class="field">Jenis Kelamin </td><td>:&nbsp;<?php echo $jenis_kelamin?></td>
+			</tr>
+			<tr>
+				<td class="field">Tempat/ Tanggal Lahir </td><td>:&nbsp;<?php echo $tempat_lahir.", ".$tanggal_lahir ?></td>
+			</tr>
+			<tr>
+				<td class="field">Agama </td><td>:&nbsp;<?php echo $agama ?></td>
+			</tr>
+			<tr>
+				<td class="field">Alamat Asal </td><td>:&nbsp;<?php echo $alamat_asal ?></td>
+			</tr>
+			<tr>
+				<td class="field">Alamat Sekarang </td><td>:&nbsp;<?php echo $alamat_sekarang ?></td>
+			</tr>
+			<tr>
+				<td class="field">Telp./HP </td><td>:&nbsp;<?php echo $no_telp ?></td>
+			</tr>
+			<tr>
+				<td class="field">Email </td><td>:&nbsp;<?php echo $email ?></td>
+			</tr>
+			<tr>
+				<td class="field">Asal Sekolah </td><td>:&nbsp;<?php echo $asal_sekolah ?></td>
+			</tr>
+			<tr>
+				<td class="field">Tahun Lulus </td><td>:&nbsp;<?php echo $tahun_lulus ?></td>
+			</tr>
+			<tr>
+				<td class="field">Jurusan </td><td>:&nbsp;<?php echo $jurusan_sma ?></td>
+			</tr>
+			<tr>
+				<td class="field">Nilai UN </td><td>:&nbsp;<?php echo $nilai_un ?></td>
+			</tr>
+		</table>
+	</fieldset>
+	<fieldset>
+	<legend>III. Data Keluarga</legend>
+		<table>
+			<tr>
+				<td class="field">Nama Ayah / Wali </td><td>:&nbsp;<?php echo $nama_ayah ?></td>
+			</tr>
+			<tr>
+				<td class="field">Pekerjaan Ayah / Wali </td><td>:&nbsp;<?php echo $pekerjaan_ayah ?></td>
+			</tr>
+			<tr>
+				<td class="field">Nama Ibu / Wali </td><td>:&nbsp;<?php echo $nama_ibu ?></td>
+			</tr>
+			<tr>
+				<td class="field">Pekerjaan Ibu / Wali </td><td>:&nbsp;<?php echo $pekerjaan_ibu ?></td>
+			</tr>
+			<tr>
+				<td class="field">Nama Ayah / Wali </td><td>:&nbsp;<?php echo $nama_ayah ?></td>
+			</tr>
+			<tr>
+				<td class="field">Alamat Orang Tua / Wali </td><td>:&nbsp;<?php echo $alamat_orang_tua ?></td>
+			</tr>
+			<tr>
+				<td class="field">Telp. HP </td><td>:&nbsp;<?php echo $no_telp_orang_tua ?></td>
+			</tr>
+		</table>
+	</fieldset>
+	<fieldset>
+	<legend>IV. Biaya Pendidikan</legend>
+		Sumber biaya pendidikan selama kuliah :<br>
+		<table><tr><td colspan="2">
+		<?php
+			$listvalue=array(1=>"Orang Tua",2=>"Mandiri",3=>"Beasiswa/Sponsor",4=>"Lainnya");
+			$jenis_biaya = explode(",", $jenis_biaya);
+			foreach ($listvalue as $key=>$value){
+				if(in_array($key,$jenis_biaya)){
+					echo "<img src='".base_url()."images/checkbox_checked.png'>".$value;
+				}else{
+					echo "<img src='".base_url()."images/checkbox.png'>".$value;
+				}
+			}
+			?>
+			</td></tr>
+		  <tr><td colspan="2">&nbsp;</td></tr><tr><td class="field">Biaya Lainnya</td><td>:&nbsp;<?php echo $biaya_lainnya?></td></tr></table>
+	</fieldset>
+	<fieldset>
+	<legend>V. Lain - lain</legend>
+	Mendapatkan info POLTEKOM dari :<br>
+	<table>
 		<tr>
-			<td>Jurusan 1</td><td>:</td><td>Teknik Informatika</td>
+			<td colspan="2">
+			<?php
+			$listinfo=array(1=>"Brosur/ Spanduk",2=>"Sekolah",3=>"Koran",4=>"Teman / Saudara",5=>"Lainnya");
+			$jenis_info = explode(",", $jenis_info);
+			foreach ($listinfo as $key=>$value){
+				if(in_array($key,$jenis_info)){
+					echo "<img src='".base_url()."images/checkbox_checked.png'>".$value;
+				}else{
+					echo "<img src='".base_url()."images/checkbox.png'>".$value;
+				}
+			}
+			?>
+			</td>
 		</tr>
-		<tr>
-			<td>Jurusan 2</td><td>:</td><td>Teknik Mekatronika</td>
-		</tr>
-		<tr>
-			<td>Jurusan 3</td><td>:</td><td>Teknik Telekomunikasi</td>
-		</tr>
-		<tr><td>Jumlah NUN</td><td>:</td><td>40</td>
+		  <tr><td colspan="2">&nbsp;</td></tr><tr><td class="field">Info Lainnya</td><td>:&nbsp;<?php echo $info_lainnya?></td></tr></table>
 	</table>
-	<h3>I. DATA PRIBADI</h3>
+	</fieldset>
+	<span class="keterangan">
+		<p>Formulir pendaftaran ini saya buat dengan sebenar-benarnya, dan apabila ada keterangan yang dipalsukan sya bersedia dituntut secara hukum.</p>
+			<table border=0>
+			<tr><td width="33%">&nbsp;</td><td width="33%">&nbsp;</td>
+
+			<td align="center">
+			_________, _______________ 2012<br><br><br><br><br><br><br>
+			<?php echo $nama_lengkap?>
+
+			</td></tr></tablen>
+	</span>
 	</div>
 	</body>
 </html>

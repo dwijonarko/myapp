@@ -2,6 +2,27 @@ body{
 	font-family:arial, Helvetica;
 	font-size:13px;
 }
+fieldset{
+	margin-top:20px;
+	padding-left:10px;
+}
+legend{
+	font-weight:bold;
+	font-size:15px;
+}
+#content{
+	width:1000px;
+	margin:auto;
+	padding :10px 0px 10px 0px;
+
+}
+#center{
+	position:relative;
+	text-align:center;
+	align:center;
+	border-bottom:1px dotted;
+	margin:15px 0 10px 0;
+}
 .table_input{
 	 font-family: arial,helvetica;
     font-size: 13px;
@@ -191,32 +212,7 @@ label {
     border-radius: 7px;
     }
 
-#content{
-	width:1000px;
-	margin:auto;
-	border:1px solid;
-	padding :10px 0 10px 10px;
 
-}
-#center{
-	position:relative;
-	text-align:center;
-	align:center;
-	border-bottom:1px dotted;
-	margin:15px 0 10px 0;
-}
-.top{
-	border-top: 1px solid;
-}
-.right{
-	border-right: 1px solid;
-}
-.bottom{
-	border-bottom: 1px solid;
-}
-.left{
-	border-left: 1px solid;
-}
 
 body{
     font-family:Arial, Helvetica, sans-serif; 
