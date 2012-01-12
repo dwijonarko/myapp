@@ -154,7 +154,7 @@
 	</table>
 	</fieldset>
 	<span class="keterangan">
-		<p>Formulir pendaftaran ini saya buat dengan sebenar-benarnya, dan apabila ada keterangan yang dipalsukan sya bersedia dituntut secara hukum.</p>
+		<p>Formulir pendaftaran ini saya buat dengan sebenar-benarnya, dan apabila ada keterangan yang dipalsukan saya bersedia dituntut secara hukum.</p>
 			<table border=0>
 			<tr><td width="33%">&nbsp;</td><td>&nbsp;</td>
 
