@@ -30,8 +30,9 @@ class Pmb extends CI_Controller{
 		if(ISSET($no_pendaftaran)){
 			$data = $this->mpmb->get_mahasiswa($no_pendaftaran);
 			$output=$this->load->view('pmb/view_data',$data,TRUE);
-			echo $output;
-			//$this->pdf->pdf_create($output,'form_pmb_'.$data['no_pendaftaran'],true);
+
+			//echo $output;
+			$this->pdf->pdf_create($output,'form_pmb_'.$data['no_pendaftaran'],true);
 
 		}else{
 			redirect(redirect(site_url().'/pmb','refresh'));

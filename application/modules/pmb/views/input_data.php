@@ -72,16 +72,16 @@
 			</table>
 		</fieldset>
 		<fieldset>
-			<legend>III. Data Keluarga</legend>
+			<legend>III. Data Keluarga (Beri tanda *alm jika sudah wafat, jika tidak ada isi dengan "-")</legend>
 			<table class="table_input">
 				<tr>
-					<td class="left_td">Nama Ayah / Wali</td><td>:</td><td><?php echo form_input($input_nama_ayah);?><?php echo form_error('nama_ayah'); ?></td>
+					<td class="left_td">Nama Ayah </td><td>:</td><td><?php echo form_input($input_nama_ayah);?><?php echo form_error('nama_ayah'); ?></td>
 				</tr>
 				<tr>
 					<td class="left_td">Pekerjaan</td><td>:</td><td><?php echo form_input($input_pekerjaan_ayah);?><?php echo form_error('pekerjaan_ayah'); ?></td>
 				</tr>
 				<tr>
-					<td class="left_td">Nama Ibu / Wali</td><td>:</td><td><?php echo form_input($input_nama_ibu);?><?php echo form_error('nama_ibu'); ?></td>
+					<td class="left_td">Nama Ibu </td><td>:</td><td><?php echo form_input($input_nama_ibu);?><?php echo form_error('nama_ibu'); ?></td>
 				</tr>
 				<tr>
 					<td class="left_td">Pekerjaan</td><td>:</td><td><?php echo form_input($input_pekerjaan_ibu);?><?php echo form_error('pekerjaan_ibu'); ?></td>
@@ -92,12 +92,24 @@
 				<tr>
 					<td class="left_td">Telp / HP</td><td>:</td><td><?php echo form_input($input_no_telp_orang_tua);?><?php echo form_error('no_telp_orang_tua'); ?></td>
 				</tr>
+				<tr>
+					<td class="left_td">Nama Wali</td><td>:</td><td><?php echo form_input($input_nama_wali);?><?php echo form_error('nama_wali'); ?></td>
+				</tr>
+				<tr>
+					<td class="left_td">Pekerjaan</td><td>:</td><td><?php echo form_input($input_pekerjaan_wali);?><?php echo form_error('pekerjaan_wali'); ?></td>
+				</tr>
+				<tr>
+					<td class="left_td">Alamat Wali</td><td>:</td><td><?php echo form_textarea($input_alamat_wali);?><?php echo form_error('alamat_wali'); ?></td>
+				</tr>
+				<tr>
+					<td class="left_td">Telp / HP</td><td>:</td><td><?php echo form_input($input_no_telp_wali);?><?php echo form_error('no_telp_wali'); ?></td>
+				</tr>
 			</table>
 		</fieldset>
 		<fieldset>
 			<legend>IV. Biaya Pendidikan</legend>
 			Sumber biaya pendidikan selama kuliah :<br>
-			<?php echo form_checkbox($input_jenis_biaya,'1',set_checkbox('jenis_biaya', '1'));?>Orang Tua 
+			<?php echo form_checkbox($input_jenis_biaya,'1',set_checkbox('jenis_biaya', '1'));?>Orang Tua
 			<?php echo form_checkbox($input_jenis_biaya,'2',set_checkbox('jenis_biaya', '2'));?>Mandiri
 			<?php echo form_checkbox($input_jenis_biaya,'3',set_checkbox('jenis_biaya', '3'));?>Beasiswa/Sponsor
 			<?php echo form_checkbox($input_jenis_biaya,'4',set_checkbox('jenis_biaya', '4',TRUE));?>Lainnya <?php echo form_input($input_biaya_lainnya)?>
@@ -105,14 +117,15 @@
 		<fieldset>
 			<legend>V. Lain-lain</legend>
 		Mendapatkan info POLTEKOM dari :<br>
-			<?php echo form_checkbox($input_jenis_info,'1',set_checkbox('jenis_info', '1'));?>Brosur / Spanduk 
+			<?php echo form_checkbox($input_jenis_info,'1',set_checkbox('jenis_info', '1'));?>Brosur / Spanduk
 			<?php echo form_checkbox($input_jenis_info,'2',set_checkbox('jenis_info', '2'));?>Sekolah
 			<?php echo form_checkbox($input_jenis_info,'3',set_checkbox('jenis_info', '3'));?>Koran
 			<?php echo form_checkbox($input_jenis_info,'4',set_checkbox('jenis_info', '4'));?>Teman / Saudara
-			<?php echo form_checkbox($input_jenis_info,'5',set_checkbox('jenis_info', '5',TRUE));?>Lainnya <?php echo form_input($input_info_lainnya)?>
+			<?php echo form_checkbox($input_jenis_info,'5',set_checkbox('jenis_info', '5'));?>Televisi
+			<?php echo form_checkbox($input_jenis_info,'6',set_checkbox('jenis_info', '6',TRUE));?>Lainnya <?php echo form_input($input_info_lainnya)?>
 		</fieldset>
 		<div id="center">
-			<?php 
+			<?php
 				echo form_submit('submit','Kirim',"class=button");
 				echo "   ";
 				echo form_reset('reset','Reset',"class=button");

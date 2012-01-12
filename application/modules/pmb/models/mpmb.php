@@ -5,10 +5,9 @@ class Mpmb extends CI_Model{
 	private	$jurusan_sma= array("IPA"=>"IPA","IPS"=>"IPS","lainnya"=>"Lainnya");
 	private $agama = array("ISLAM" => "ISLAM","KRISTEN"=> "KRISTEN","KATOLIK"=> "KATOLIK","HINDU"=>"HINDU","BUDHA"=>"BUDHA","LAIN"	=>"LAINNYA");
 	private $months= array("1"=>"Januari","2"=>"Februari","3"=>"Maret","4"=>"April","5"=>"Mei","6"=>"Juni","7"=>"Juli","8"=>"Agustus","9"=>"September","10"=>"Oktober","11"=>"November","12"=>"Desember");
-	private $kelamin=array("L"=>"Pria","P"=>"Wanita");
+	private $kelamin=array("L"=>"Laki-Laki","P"=>"Perempuan");
 	function __construct(){
 		parent::__construct();
-
 	}
 
 
@@ -47,20 +46,24 @@ class Mpmb extends CI_Model{
 		$data['input_tempat_lahir']		= array('name'=>'tempat_lahir', 'size'=>50,'class'=>'input','value'=>set_value('tempat_lahir'));
 		$data['input_asal_sekolah']		= array('name'=>'asal_sekolah', 'size'=>50,'class'=>'input','value'=>set_value('asal_sekolah'));
 		$data['input_tahun_lulus']		= array('name'=>'tahun_lulus', 'size'=>20,'class'=>'input','value'=>set_value('tahun_lulus'));
-		$data['input_nun']				= array('name'=>'nilai_un','size'=>15,'class'=>'input','value'=>set_value('nilai_un'));
+		$data['input_nun']						= array('name'=>'nilai_un','size'=>15,'class'=>'input','value'=>set_value('nilai_un'));
 		$data['input_alamat_asal']		= array('name'=>'alamat_asal', 'rows'=>5,'cols'=>100,'class'=>'input','value'=>set_value('alamat_asal'));
-		$data['input_alamat_sekarang']	= array('name'=>'alamat_sekarang', 'rows'=>5,'cols'=>100,'class'=>'input','value'=>set_value('alamat_sekarang'));
-		$data['input_no_telp']			= array('name'=>'no_telp', 'size'=>20,'class'=>'input','value'=>set_value('no_telp'));
-		$data['input_email']			= array('name'=>'email', 'size'=>50,'class'=>'input','value'=>set_value('email'));
-		$data['input_nama_ayah']		= array('name'=>'nama_ayah', 'size'=>50,'class'=>'input','value'=>set_value('nama_ayah'));
-		$data['input_nama_ibu']			= array('name'=>'nama_ibu', 'size'=>50,'class'=>'input','value'=>set_value('nama_ibu'));
-		$data['input_pekerjaan_ayah']	= array('name'=>'pekerjaan_ayah', 'size'=>50,'class'=>'input','value'=>set_value('pekerjaaan_ayah'));
+		$data['input_alamat_sekarang']= array('name'=>'alamat_sekarang', 'rows'=>5,'cols'=>100,'class'=>'input','value'=>set_value('alamat_sekarang'));
+		$data['input_no_telp']				= array('name'=>'no_telp', 'size'=>20,'class'=>'input','value'=>set_value('no_telp'));
+		$data['input_email']					= array('name'=>'email', 'size'=>50,'class'=>'input','value'=>set_value('email'));
+		$data['input_nama_ayah']			= array('name'=>'nama_ayah', 'size'=>50,'class'=>'input','value'=>set_value('nama_ayah'));
+		$data['input_nama_wali']			= array('name'=>'nama_wali', 'size'=>50,'class'=>'input','value'=>set_value('nama_wali'));
+		$data['input_nama_ibu']				= array('name'=>'nama_ibu', 'size'=>50,'class'=>'input','value'=>set_value('nama_ibu'));
+		$data['input_pekerjaan_ayah']	= array('name'=>'pekerjaan_ayah', 'size'=>50,'class'=>'input','value'=>set_value('pekerjaan_ayah'));
 		$data['input_pekerjaan_ibu']	= array('name'=>'pekerjaan_ibu', 'size'=>50,'class'=>'input','value'=>set_value('pekerjaan_ibu'));
+		$data['input_pekerjaan_wali']	= array('name'=>'pekerjaan_wali', 'size'=>50,'class'=>'input','value'=>set_value('pekerjaan_wali'));
 		$data['input_alamat_orang_tua']	= array('name'=>'alamat_orang_tua', 'rows'=>5,'cols'=>100,'class'=>'input','value'=>set_value('alamat_orang_tua'));
 		$data['input_no_telp_orang_tua']= array('name'=>'no_telp_orang_tua', 'size'=>20,'class'=>'input','value'=>set_value('no_telp_orang_tua'));
+		$data['input_alamat_wali']		= array('name'=>'alamat_wali', 'rows'=>5,'cols'=>100,'class'=>'input','value'=>set_value('alamat_wali'));
+		$data['input_no_telp_wali']		= array('name'=>'no_telp_wali', 'size'=>20,'class'=>'input','value'=>set_value('no_telp_wali'));
 		$data['input_jenis_kelamin']	= array('name'=>'jenis_kelamin','class'=>'input');
 		$data['input_jenis_biaya']		= array('name'=>'jenis_biaya[]','class'=>'input');
-		$data['input_jenis_info']		= array('name'=>'jenis_info[]','class'=>'input');
+		$data['input_jenis_info']			= array('name'=>'jenis_info[]','class'=>'input');
 		$data['input_biaya_lainnya']	= array('name'=>'biaya_lainnya', 'size'=>50,'class'=>'input','value'=>set_value('biaya_lainnya'));
 		$data['input_info_lainnya']		= array('name'=>'info_lainnya', 'size'=>50,'class'=>'input','value'=>set_value('info_lainnya'));
 
@@ -86,13 +89,13 @@ class Mpmb extends CI_Model{
 		),
 		array(
 							'field'   => 'nama_lengkap',
-						    'label'   => 'Nama Lengkap',
-						    'rules'   => 'required|xss_clean',
+							'label'   => 'Nama Lengkap',
+							'rules'   => 'required|xss_clean',
 		),
 		array(
 							'field'   => 'jenis_kelamin',
-						    'label'   => 'Jenis kelamin',
-						    'rules'   => 'required|xss_clean',
+							'label'   => 'Jenis kelamin',
+							'rules'   => 'required|xss_clean',
 		),
 		array(
 							'field'   => 'tempat_lahir',
@@ -161,33 +164,58 @@ class Mpmb extends CI_Model{
 		),
 		array(
 							'field'   => 'nama_ayah',
-							'label'   => 'Nama Ayah / Wali',
+							'label'   => 'Nama Ayah',
 							'rules'   => 'required|xss_clean',
 		),
 		array(
 							'field'   => 'pekerjaan_ayah',
-							'label'   => 'Pekerjaan Ayah / Wali',
+							'label'   => 'Pekerjaan Ayah',
 							'rules'   => 'required|xss_clean',
 		),
 		array(
 							'field'   => 'nama_ibu',
-							'label'   => 'Nama Ibu / Wali',
+							'label'   => 'Nama Ibu',
 							'rules'   => 'required|xss_clean',
 		),
 		array(
 							'field'   => 'pekerjaan_ibu',
-							'label'   => 'Pekerjaan Ibu / Wali',
+							'label'   => 'Pekerjaan Ibu',
 							'rules'   => 'required|xss_clean',
 		),
 		array(
 							'field'   => 'alamat_orang_tua',
-							'label'   => 'Alamat Orang Tua / Wali',
+							'label'   => 'Alamat Orang Tua',
 							'rules'   => 'required|xss_clean',
 		),
 		array(
-							'field'   => 'no_telp_orang_tua',
-							'label'   => 'Nomor Telepon / HP orang tua / Wali',
+							'field'   => 'nama_wali',
+							'label'   => 'Nama Wali',
+							'rules'   => 'required|xss_clean',
+		),
+		array(
+							'field'   => 'pekerjaan_wali',
+							'label'   => 'Pekerjaan Wali',
+							'rules'   => 'required|xss_clean',
+		),
+		array(
+							'field'   => 'no_telp_wali',
+							'label'   => 'Nomor Telepon / HP Wali',
 							'rules'   => 'required|alpha_dash|xss_clean',
+		),
+		array(
+							'field'   => 'no_telp_orang_tua',
+							'label'   => 'Nomor Telepon / HP orang tua',
+							'rules'   => 'required|alpha_dash|xss_clean',
+		),
+		array(
+							'field'   => 'alamat_orang_tua',
+							'label'   => 'Alamat Orang Tua',
+							'rules'   => 'required|xss_clean',
+		),
+		array(
+							'field'   => 'alamat_wali',
+							'label'   => 'Alamat Wali',
+							'rules'   => 'required|xss_clean',
 		),
 		array(
 							'field'   => 'jenis_biaya',
@@ -250,6 +278,10 @@ class Mpmb extends CI_Model{
 			'pekerjaan_ibu'	=> $this->input->post('pekerjaan_ibu'),
 			'alamat_orang_tua'=> $this->input->post('alamat_orang_tua'),
 			'no_telp_orang_tua'	=> $this->input->post('no_telp_orang_tua'),
+			'nama_wali'=>$this->input->post('nama_wali'),
+			'pekerjaan_wali'	=> $this->input->post('pekerjaan_wali'),
+			'alamat_wali'=> $this->input->post('alamat_wali'),
+			'no_telp_wali'	=> $this->input->post('no_telp_wali'),
 			'jenis_biaya'	=> $biaya,
 			'biaya_lainnya'=> $this->input->post('biaya_lainnya'),
 			'jenis_info'=> $info,
@@ -297,6 +329,10 @@ class Mpmb extends CI_Model{
 			$data['pekerjaan_ibu'] = $row->pekerjaan_ibu;
 			$data['alamat_orang_tua'] = $row->alamat_orang_tua;
 			$data['no_telp_orang_tua'] = $row->no_telp_orang_tua;
+			$data['nama_wali'] = $row->nama_wali;
+			$data['pekerjaan_wali'] = $row->pekerjaan_wali;
+			$data['alamat_wali']=$row->alamat_wali;
+			$data['no_telp_wali'] = $row->no_telp_wali;
 			$data['jenis_biaya'] = $row->jenis_biaya;
 			$data['biaya_lainnya'] = $row->biaya_lainnya;
 			$data['jenis_info'] = $row->jenis_info;
