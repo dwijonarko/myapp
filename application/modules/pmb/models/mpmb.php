@@ -342,6 +342,15 @@ class Mpmb extends CI_Model{
 		}else{
 			redirect('pmb');
 		}
-
 	}
+
+	function getAllGrid($start,$limit,$sidx,$sord,$where){
+    $this->db->select('*');
+    $this->db->limit($limit);
+    if($where != NULL)$this->db->where($where,NULL,FALSE);
+	    $this->db->order_by($sidx,$sord);
+    $query = $this->db->get('mahasiswa_baru',$limit,$start);
+
+    return $query->result();
+  }
 }
