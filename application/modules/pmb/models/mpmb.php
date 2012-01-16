@@ -345,7 +345,7 @@ class Mpmb extends CI_Model{
 	}
 
 	function getAllGrid($start,$limit,$sidx,$sord,$where){
-    $this->db->select('*');
+    $this->db->select('id,no_pendaftaran,nama_lengkap,pilihan_1,asal_sekolah,no_telp');
     $this->db->limit($limit);
     if($where != NULL)$this->db->where($where,NULL,FALSE);
 	    $this->db->order_by($sidx,$sord);

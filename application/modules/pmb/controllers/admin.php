@@ -1,5 +1,4 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
 class Admin extends CI_Controller{
 	function __construct(){
 		parent::__construct();
@@ -8,17 +7,18 @@ class Admin extends CI_Controller{
 	}
 
 	function index(){
-		if (!$this->ion_auth->logged_in()){
-			redirect('auth/login');
-		}else{
+		if ($this->ion_auth->logged_in()){
 			$this->load->view('show');
+		}else{
+			redirect('auth/login');
 		}
 	}
 
 	function loadDataGrid(){
-        $page = isset($_POST['page'])?$_POST['page']:1; // get the requested page
-        $limit = isset($_POST['rows'])?$_POST['rows']:10; // get how many rows we want to have into the grid
-        $sidx = isset($_POST['sidx'])?$_POST['sidx']:'no_pendaftaran'; // get index row - i.e. user click to sort
+		if ($this->ion_auth->logged_in()){
+			  $page = isset($_POST['page'])?$_POST['page']:1; // get the requested page
+        $limit = isset($_POST['rows'])?$_POST['rows']:30; // get how many rows we want to have into the grid
+        $sidx = isset($_POST['sidx'])?$_POST['sidx']:'id'; // get index row - i.e. user click to sort
         $sord = isset($_POST['sord'])?$_POST['sord']:''; // get the direction
 
         $start = $limit*$page - $limit; // do not put $limit*($page - 1)
@@ -74,13 +74,19 @@ class Admin extends CI_Controller{
 
         $responce->page = $page;
         $responce->total = $total_pages;
-        $responce->records = $count;
+        $responce->records = "$count";
         $i=0;
         foreach($query as $row) {
             $responce->rows[$i]['id']=$row->id;
             $responce->rows[$i]['cell']=array($row->no_pendaftaran,$row->nama_lengkap,$row->no_telp,$row->pilihan_1,$row->asal_sekolah);
+            //$responce->rows[$i]['cell']=array("1","2","3","4");
             $i++;
         }
+        //return $responce;
         echo json_encode($responce);
+		}else{
+			redirect('auth/login');
+		}
   }
+
 }
