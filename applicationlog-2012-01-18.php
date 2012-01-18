@@ -485,3 +485,84 @@ ERROR - 2012-01-18 16:28:38 --> Query error: You have an error in your SQL synta
 ORDER BY `id` asc
 LIMIT 50' at line 3
 ERROR - 2012-01-18 16:29:02 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '|kecamatan LIKE '%arjowinangun%'|jenjang LIKE '%atas%'| kota LIKE '%kota malang%' at line 3
+ERROR - 2012-01-18 18:26:37 --> Severity: Notice  --> Undefined index: _search /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 23
+ERROR - 2012-01-18 18:26:37 --> Severity: Notice  --> Undefined variable: groupOp /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 63
+ERROR - 2012-01-18 18:26:37 --> Severity: Notice  --> Undefined offset: 1 /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 63
+ERROR - 2012-01-18 18:26:37 --> Severity: Notice  --> Undefined variable: groupOp /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 63
+ERROR - 2012-01-18 18:26:37 --> Severity: Notice  --> Undefined offset: 2 /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 63
+ERROR - 2012-01-18 18:26:37 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IS NULL
+ORDER BY `npsn`
+LIMIT 30' at line 3
+ERROR - 2012-01-18 18:26:41 --> Severity: Notice  --> Undefined variable: groupOp /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 63
+ERROR - 2012-01-18 18:26:41 --> Severity: Notice  --> Undefined offset: 1 /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 63
+ERROR - 2012-01-18 18:26:41 --> Severity: Notice  --> Undefined variable: groupOp /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 63
+ERROR - 2012-01-18 18:26:41 --> Severity: Notice  --> Undefined offset: 2 /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 63
+ERROR - 2012-01-18 18:26:41 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IS NULL
+ORDER BY `id` asc
+LIMIT 50' at line 3
+ERROR - 2012-01-18 18:30:51 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'status LIKE '%negeri%'kota LIKE '%kota malang%'
+ORDER BY `id` asc
+LIMIT 50' at line 3
+ERROR - 2012-01-18 18:31:30 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ANDstatus LIKE '%negeri%' ANDkota LIKE '%kota malang%' AND
+ORDER BY `id` asc
+LIM' at line 3
+ERROR - 2012-01-18 18:37:26 --> Query error: Unknown column 'nam' in 'where clause'
+ERROR - 2012-01-18 18:38:20 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ANDstatus LIKE '%negeri%' ANDkota LIKE '%kota malang%' AND
+ORDER BY `id` asc
+LIM' at line 3
+ERROR - 2012-01-18 18:44:11 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ANDstatus LIKE '%negeri%' ANDkota LIKE '%kota malang%' AND
+ORDER BY `id` asc
+LIM' at line 3
+ERROR - 2012-01-18 18:47:49 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ANDstatus LIKE '%negeri%' ANDkota LIKE '%kota malang%' AND
+ORDER BY `id` asc
+LIM' at line 3
+ERROR - 2012-01-18 18:48:52 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ANDstatus LIKE '%negeri%' ANDkota LIKE '%kota malang%' AND
+ORDER BY `id` asc
+LIM' at line 3
+ERROR - 2012-01-18 18:49:11 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ANDstatus LIKE '%negeri%' ANDkota LIKE '%kota malang%' AND
+ORDER BY `id` asc
+LIM' at line 3
+ERROR - 2012-01-18 18:50:21 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ANDstatus LIKE '%negeri%' ANDkota LIKE '%kota malang%' AND
+ORDER BY `id` asc
+LIM' at line 3
+ERROR - 2012-01-18 18:51:26 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ANDstatus LIKE '%negeri%' ANDkota LIKE '%kota malang%' AND
+ORDER BY `id` asc
+LIM' at line 3
+ERROR - 2012-01-18 18:51:56 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ANDstatus LIKE '%negeri%' ANDkota LIKE '%kota malang%' AND
+ORDER BY `id` asc
+LIM' at line 3
+ERROR - 2012-01-18 18:52:21 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ANDstatus LIKE '%negeri%' ANDkota LIKE '%kota malang%' AND
+ORDER BY `id` asc
+LIM' at line 3
+ERROR - 2012-01-18 18:52:57 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ANDstatus LIKE '%negeri%' ANDkota LIKE '%kota malang%' AND
+ORDER BY `id` asc
+LIM' at line 3
+ERROR - 2012-01-18 18:53:33 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY `id` asc
+LIMIT 50' at line 4
+ERROR - 2012-01-18 18:55:43 --> Severity: Notice  --> Undefined variable: where_s /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 69
+ERROR - 2012-01-18 18:55:43 --> Severity: Notice  --> Undefined variable: where_s /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 80
+ERROR - 2012-01-18 18:56:11 --> Severity: Notice  --> Undefined variable: where_s /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 80
+ERROR - 2012-01-18 18:57:10 --> Severity: Notice  --> Use of undefined constant “hello” - assumed '“hello”' /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 69
+ERROR - 2012-01-18 18:57:10 --> Severity: Notice  --> Undefined variable: where_s /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 81
+ERROR - 2012-01-18 18:57:28 --> Severity: Notice  --> Undefined variable: where_s /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 81
+ERROR - 2012-01-18 18:58:00 --> Severity: Notice  --> Undefined variable: where_s /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 80
+ERROR - 2012-01-18 18:58:18 --> Severity: Notice  --> Undefined variable: where_s /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 80
+ERROR - 2012-01-18 18:59:32 --> Severity: Notice  --> Undefined variable: where_s /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 80
+ERROR - 2012-01-18 19:00:02 --> Severity: Notice  --> Undefined variable: where_s /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 80
+ERROR - 2012-01-18 19:01:23 --> Severity: Notice  --> Undefined variable: where_s /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 80
+ERROR - 2012-01-18 19:01:56 --> Severity: Notice  --> Undefined variable: where_s /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 80
+ERROR - 2012-01-18 19:04:04 --> Severity: Notice  --> Undefined variable: where_s /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 70
+ERROR - 2012-01-18 19:04:04 --> Severity: Notice  --> Undefined variable: where_s /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 81
+ERROR - 2012-01-18 19:04:18 --> Severity: Notice  --> Undefined variable: where_s /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 79
+ERROR - 2012-01-18 19:04:29 --> Severity: Notice  --> Undefined variable: where_s /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 80
+ERROR - 2012-01-18 19:09:32 --> Severity: Notice  --> Undefined variable: page /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 16
+ERROR - 2012-01-18 19:09:32 --> Severity: Notice  --> Undefined variable: total_pages /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 17
+ERROR - 2012-01-18 19:09:32 --> Severity: Notice  --> Undefined variable: count /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 18
+ERROR - 2012-01-18 19:10:52 --> Severity: Notice  --> Undefined variable: limit /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 18
+ERROR - 2012-01-18 19:10:52 --> Severity: Warning  --> Division by zero /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 18
+ERROR - 2012-01-18 19:10:52 --> Severity: Notice  --> Undefined variable: page /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 23
+ERROR - 2012-01-18 19:10:52 --> Severity: Notice  --> Undefined variable: page /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 24
+ERROR - 2012-01-18 19:11:06 --> Severity: Notice  --> Undefined variable: limit /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 18
+ERROR - 2012-01-18 19:11:06 --> Severity: Warning  --> Division by zero /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 18
+ERROR - 2012-01-18 19:11:06 --> Severity: Notice  --> Undefined variable: page /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 23
+ERROR - 2012-01-18 19:11:06 --> Severity: Notice  --> Undefined variable: page /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 24

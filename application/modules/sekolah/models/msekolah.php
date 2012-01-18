@@ -5,6 +5,7 @@ class MSekolah extends CI_Model{
 	}
 
 		function getAllGrid($start,$limit,$sidx,$sord,$where){
+
     $this->db->select('id,npsn,nss,nama,jenjang,status,kota,kecamatan,desa,alamat_sekolah,nip_ks,nama_ks,update_status,keterangan');
     $this->db->limit($limit);
     if($where != NULL)$this->db->where($where,NULL,FALSE);

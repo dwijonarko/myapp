@@ -21,7 +21,6 @@ class Sekolah extends CI_Controller{
 
         $where = ""; //if there is no search request sent by jqgrid, $where should be empty
         if ($_POST['_search'] == 'true') {
-            //$where = "$searchField $ops '$searchString' "; //create where parameter for search data
             $json_filters = isset($_POST['filters']) ? $_POST['filters']: false;
 		        $filters = json_decode($json_filters,true);
 		        $groupOp = $filters['groupOp'];
@@ -56,13 +55,14 @@ class Sekolah extends CI_Controller{
 					               }
 				            }
 					        }
-						        $where= $where."$searchField $ops '$searchString'|";
+						     $where= $where." $searchField $ops '$searchString' $groupOp";
 				    }
+				    $length = strlen($where);
+				    $lengthOp=strlen($groupOp);
+				    $delimiter= substr($where,$length-$lengthOp,$lengthOp);
+				    $where = substr_replace($where,"",$length-$lengthOp,$lengthOp);
         }
-        $where_array= explode("|",$where);
-				$where = "$where_array[0] $groupOp $where_array[1] $groupOp $where_array[2]";
 
-        echo $where;
         if(!$sidx) $sidx =1;
         $count = $this->db->count_all_results('Sekolah'); //get total rows from table
 
@@ -85,6 +85,6 @@ class Sekolah extends CI_Controller{
             $i++;
         }
         //return $responce;
-        //echo json_encode($responce);
+        echo json_encode($responce);
   }
 }

@@ -27,7 +27,7 @@
                     colModel:[
                         {name:"npsn",index:"npsn", width:20, align:"left"},
                         {name:"nss",index:"nss", width:30, align:"left"},
-                        {name:"nama",index:"nama", width:60, align:"left"},
+                        {name:"nama",index:"nama", width:50, align:"left"},
                         {name:"jenjang",index:"jenjang", width:45, align:"left"},
                         {name:"status",index:"status", width:30, align:"left"},
                         {name:"kota",index:"kota", width:20, align:"left"},
@@ -36,7 +36,7 @@
                         {name:"alamat",index:"alamat", width:40, align:"left"},
                         {name:"nip_ks",index:"nip_ks", width:25, align:"left"},
                         {name:"nama_ks",index:"nama_ks", width:40, align:"left"},
-                        {name:"update_status",index:"update_status", width:10, align:"left"}
+                        {name:"update_status",index:"update_status", width:20, align:"left"}
                     ],
                     rownumbers:true,
                     rowNum:50,
