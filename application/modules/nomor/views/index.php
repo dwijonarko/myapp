@@ -1,8 +1,8 @@
 <!DOCTYPE >
 <html>
 	<head><title>Penomoran Surat POLITEKNIK KOTA MALANG</title></head>
-	<link rel="stylesheet" href="<?php echo base_url() ?>style/css.css" type="text/css"  media="screen" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo base_url() ?>stylesheets/css.css" type="text/css"  media="screen" />
+					<script src="<?php echo base_url() ?>javascripts/jquery.min.js" type="text/javascript"></script>
 	<body>
 	<?php echo form_open("nomor/submit"); ?>
 	<table>
