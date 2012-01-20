@@ -12,8 +12,8 @@ class Sekolah extends CI_Controller{
 
 	function loadDataGrid(){
 			  $page = isset($_POST['page'])?$_POST['page']:1; // get the requested page
-        $limit = isset($_POST['rows'])?$_POST['rows']:30; // get how many rows we want to have into the grid
-        $sidx = isset($_POST['sidx'])?$_POST['sidx']:'npsn'; // get index row - i.e. user click to sort
+        $limit = isset($_POST['rows'])?$_POST['rows']:50; // get how many rows we want to have into the grid
+        $sidx = isset($_POST['sidx'])?$_POST['sidx']:'id'; // get index row - i.e. user click to sort
         $sord = isset($_POST['sord'])?$_POST['sord']:''; // get the direction
 
         $start = $limit*$page - $limit; // do not put $limit*($page - 1)
@@ -81,7 +81,7 @@ class Sekolah extends CI_Controller{
         $i=0;
         foreach($query as $row) {
             $responce->rows[$i]['id']=$row->id;
-            $responce->rows[$i]['cell']=array($row->npsn,$row->nss,$row->nama,$row->jenjang,$row->status,$row->kota,$row->kecamatan,$row->desa,$row->alamat_sekolah,$row->nip_ks,$row->nama_ks,$row->update_status,$row->keterangan);
+            $responce->rows[$i]['cell']=array($row->npsn,$row->nss,$row->nama,$row->jenjang,$row->status,$row->kota,$row->kecamatan,$row->desa,$row->alamat_sekolah,$row->nip_ks,$row->nama_ks,$row->update_status);
             $i++;
         }
         //return $responce;

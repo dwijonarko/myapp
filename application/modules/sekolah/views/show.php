@@ -9,6 +9,9 @@
 				<script src="<?php echo base_url() ?>javascripts/jquery-ui.min.js" type="text/javascript"></script>
 				<script type="text/javascript" src="<?php echo base_url(); ?>javascripts/jqgrid/js/i18n/grid.locale-en.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>javascripts/jqgrid/jquery.jqGrid.min.js"></script>
+        <style type="text/css">
+			        .myAltRowClass { background-color: #7AF97C; background-image: none; }
+    </style>
         <title>Daftar SMA SMK se Jawa Timur</title>
     </head>
     <body>
@@ -19,7 +22,8 @@
 
         <script type="text/javascript">
               $(document).ready(function () {
-                $("#list1").jqGrid({
+              var grid = $("#list1");
+	            grid.jqGrid({
                    url:'<?php echo $base_url.'index.php/sekolah/loadDataGrid'?>',     //another controller function for generating data
                     mtype : "POST",             //Ajax request type. It also could be GET
                     datatype: "json",            //supported formats XML, JSON or Arrray
@@ -49,8 +53,22 @@
                     rownumbers: true,
                     gridview: true,
                     multiselect: true,
-                    caption:"Daftar SMA / SMK se-Jawa Timur"
-                }).navGrid("#pager1",{edit:false,add:false,del:false}, {}, {}, {}, {multipleSearch:true});
+		                loadComplete: function() {
+		                var row =  grid.getGridParam("records");
+			              $('.jqgrow').each(function(index,value){
+				              var idRow = $(this).attr("id");
+											var data = jQuery('#list1').jqGrid ('getCell', idRow, 'update_status');
+						                if(data!="Aktif"){
+							                grid.jqGrid('setRowData',idRow,"false",'ui-state-error');
+						                }
+			              });
+                    },
+										caption:"Daftar SMA / SMK se-Jawa Timur"
+                }).navGrid("#pager1",
+                {edit:false,add:false,del:false},
+                {}, {}, {},
+                {multipleSearch:true}
+                );
                 $("#m1").click( function() {
 		                var s; s = $("#list1").jqGrid('getGridParam','selarrrow');
 		                alert(s);
