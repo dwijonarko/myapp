@@ -48,14 +48,20 @@
                     viewrecords: true,
                     rownumbers: true,
                     gridview: true,
+                    multiselect: true,
                     caption:"Daftar SMA / SMK se-Jawa Timur"
                 }).navGrid("#pager1",{edit:false,add:false,del:false}, {}, {}, {}, {multipleSearch:true});
+                $("#m1").click( function() {
+		                var s; s = $("#list1").jqGrid('getGridParam','selarrrow');
+		                alert(s);
+		            });
             });
         </script>
 				<div id="content">
 
 	        <table id="list1"></table> <!--Grid table-->
 	        <div id="pager1"></div>  <!--pagination div-->
+	        <a href="javascript:void(0)" id="m1">Simpan Data</a>
         </div>
     </body>
 </html>
