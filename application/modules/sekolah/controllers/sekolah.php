@@ -2,11 +2,21 @@
 class Sekolah extends CI_Controller{
 	function __construct(){
 		parent::__construct();
-	$this->load->model('MSekolah');
+		$this->load->model('MSekolah');
+		$this->load->library('ion_auth');
 	}
 
 	function index(){
-		$this->load->view('show');
+		if (!$this->ion_auth->logged_in())
+		{
+			redirect('auth/login');
+		}else{
+				$this->template
+					->title('POLTEKOM', 'Daftar SMK dan SMA se Jawa Timur')
+					->set(array('header' => 'Daftar SMK dan SMA se Jawa Timur'))
+					->set_layout('sekolah') // application/views/layouts/two_col.php
+					->build('show'); // views/welcome_message
+		}
 
 	}
 
@@ -81,10 +91,15 @@ class Sekolah extends CI_Controller{
         $i=0;
         foreach($query as $row) {
             $responce->rows[$i]['id']=$row->id;
-            $responce->rows[$i]['cell']=array($row->npsn,$row->nss,$row->nama,$row->jenjang,$row->status,$row->kota,$row->kecamatan,$row->desa,$row->alamat_sekolah,$row->nip_ks,$row->nama_ks,$row->update_status);
+            $responce->rows[$i]['cell']=array($row->npsn,$row->nss,$row->nama,$row->jenjang,$row->status,$row->kota,$row->kecamatan,$row->desa,$row->alamat_sekolah,$row->nip_ks,$row->nama_ks,$row->update_status,$row->keterangan);
             $i++;
         }
         //return $responce;
         echo json_encode($responce);
+  }
+
+  function submit(){
+		$param =  $this->input->post('param');
+		$this->MSekolah->update($param);
   }
 }

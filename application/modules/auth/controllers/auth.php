@@ -49,7 +49,7 @@ class Auth extends Controller {
 		if ($this->ion_auth->logged_in())
 		{
 			//already logged in so no need to access this page
-			redirect(site_url()."/pmb/admin", 'refresh');
+			redirect(site_url()."/sekolah", 'refresh');
 		}
 
 		//validate form input
@@ -65,7 +65,7 @@ class Auth extends Controller {
 			{ //if the login is successful
 				//redirect them back to the home page
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
-				redirect(site_url()."/pmb/admin", 'refresh');
+				redirect(site_url()."/sekolah", 'refresh');
 			}
 			else
 			{ //if the login was un-successful

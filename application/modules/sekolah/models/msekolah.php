@@ -14,4 +14,13 @@ class MSekolah extends CI_Model{
 
     return $query->result();
   }
+
+  function update($param){
+		$id = explode(',',$param);
+		foreach($id as $value) {
+					$sql_string = "UPDATE Sekolah SET keterangan= IF(keterangan='dikunjungi',NULL,'dikunjungi') WHERE id=$value";
+					$this->db->query($sql_string);
+		}
+
+  }
 }

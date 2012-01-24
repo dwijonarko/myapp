@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
-	
+
 	function __construct(){
 		parent::__construct();
 	}
@@ -11,10 +11,10 @@ class Welcome extends CI_Controller {
 	 *
 	 * Maps to the following URL
 	 * 		http://example.com/index.php/welcome
-	 *	- or -  
+	 *	- or -
 	 * 		http://example.com/index.php/welcome/index
 	 *	- or -
-	 * Since this controller is set as the default controller in 
+	 * Since this controller is set as the default controller in
 	 * config/routes.php, it's displayed at http://example.com/
 	 *
 	 * So any other public methods not prefixed with an underscore will
@@ -26,6 +26,9 @@ class Welcome extends CI_Controller {
 		//$this->load->library('pdf');
 		/*$file_pdf = */ $this->load->view('welcome_message');//Save as variable
 		//$this->pdf->pdf_create($file_pdf,'welcome');
+		$this->template
+					->set_layout('default') // application/views/layouts/two_col.php
+					->build('welcome_message'); // views/welcome_message
 	}
 }
 
