@@ -8,7 +8,7 @@
 	<table>
 	<tr>
 		<td><?php echo form_label("Divisi"); ?></td>
-		<td><?php echo form_dropdown("divisi",$divisi,"","id='divisi' class='select'"); ?></td>
+		<td><?php echo form_dropdown("divisi",$divisi,"","id='divisi' class='dropdown'"); ?></td>
 	</tr>
 	<tr>
 		<td><?php echo form_label("Kode Perihal") ?></td>

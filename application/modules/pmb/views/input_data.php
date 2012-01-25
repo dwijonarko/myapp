@@ -1,6 +1,7 @@
 <!DOCTYPE >
 <html>
 	<head><title>PENDAFTARAN MAHASISWA BARU - POLITEKNIK KOTA MALANG</title></head>
+	<link rel="stylesheet" href="<?php echo base_url() ?>stylesheets/pmb.css" type="text/css"  media="screen" />
 	<link rel="stylesheet" href="<?php echo base_url() ?>stylesheets/css.css" type="text/css"  media="screen" />
 	<link rel="stylesheet" href="<?php echo base_url() ?>stylesheets/jquery-ui-1.8.16.custom.css" type="text/css"  media="screen" />
 	<script src="<?php echo base_url() ?>javascripts/jquery.min.js" type="text/javascript"></script>
@@ -17,13 +18,13 @@
 			<legend>I. Program Studi Pilihan</legend>
 			<table class="table_input">
 				<tr>
-					<td class="left_td">Pilihan 1</td><td>:</td><td><?php echo form_dropdown("pilihan_1",$jurusan,set_value("pilihan_1"),"class='select'")?><?php echo form_error('pilihan_1'); ?></td>
+					<td class="left_td">Pilihan 1</td><td>:</td><td><?php echo form_dropdown("pilihan_1",$jurusan,set_value("pilihan_1"),"class='dropdown'")?><?php echo form_error('pilihan_1'); ?></td>
 				</tr>
 				<tr>
-					<td class="left_td">Pilihan 2</td><td>:</td><td><?php echo form_dropdown("pilihan_2",$jurusan,set_value("pilihan_2"),"class='select'")?><?php echo form_error('pilihan_2'); ?></td>
+					<td class="left_td">Pilihan 2</td><td>:</td><td><?php echo form_dropdown("pilihan_2",$jurusan,set_value("pilihan_2"),"class='dropdown'")?><?php echo form_error('pilihan_2'); ?></td>
 				</tr>
 				<tr>
-					<td class="left_td">Pilihan 3</td><td>:</td><td><?php echo form_dropdown("pilihan_3",$jurusan,set_value("pilihan_3"),"class='select'")?><?php echo form_error('pilihan_3'); ?></td>
+					<td class="left_td">Pilihan 3</td><td>:</td><td><?php echo form_dropdown("pilihan_3",$jurusan,set_value("pilihan_3"),"class='dropdown'")?><?php echo form_error('pilihan_3'); ?></td>
 				</tr>
 			</table>
 		</fieldset>
@@ -40,10 +41,10 @@
 					<td class="left_td">Tempat Lahir</td><td>:</td><td><?php echo form_input($input_tempat_lahir);?><?php echo form_error('tempat_lahir'); ?></td>
 				</tr>
 				<tr>
-					<td class="left_td">Tanggal Lahir</td><td>:</td><td><?php echo form_dropdown("tanggal",$date,set_value("tanggal"),"class='select date'"); echo form_dropdown("bulan",$month,set_value("bulan"),"class='select date'"); echo form_dropdown("tahun",$year,set_value("tahun"),"class='select date'");?></td>
+					<td class="left_td">Tanggal Lahir</td><td>:</td><td><?php echo form_dropdown("tanggal",$date,set_value("tanggal"),"class='dropdown date'"); echo form_dropdown("bulan",$month,set_value("bulan"),"class='dropdown date'"); echo form_dropdown("tahun",$year,set_value("tahun"),"class='dropdown date'");?></td>
 				</tr>
 				<tr>
-					<td class="left_td">Agama</td><td>:</td><td><?php echo form_dropdown("agama",$agama,set_value("agama"),"class='select'");?></td>
+					<td class="left_td">Agama</td><td>:</td><td><?php echo form_dropdown("agama",$agama,set_value("agama"),"class='dropdown'");?></td>
 				</tr>
 				<tr>
 					<td class="left_td">Alamat Asal</td><td>:</td><td><?php echo form_textarea($input_alamat_asal);?><?php echo form_error('alamat_asal'); ?></td>
@@ -64,7 +65,7 @@
 					<td class="left_td">Tahun Lulus</td><td>:</td><td><?php echo form_input($input_tahun_lulus);?><?php echo form_error('tahun_lulus'); ?></td>
 				</tr>
 				<tr>
-					<td class="left_td">Jurusan</td><td>:</td><td><?php echo form_dropdown("jurusan_sma",$jurusan_sma,set_value("jurusan_sma"),"class='select'");?></td>
+					<td class="left_td">Jurusan</td><td>:</td><td><?php echo form_dropdown("jurusan_sma",$jurusan_sma,set_value("jurusan_sma"),"class='dropdown'");?></td>
 				</tr>
 				<tr>
 					<td class="left_td">Nilai UN</td><td>:</td><td><?php echo form_input($input_nun)?><?php echo form_error('nilai_un'); ?></td>

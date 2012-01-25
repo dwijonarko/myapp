@@ -21,6 +21,10 @@ class Sekolah extends CI_Controller{
 	}
 
 	function loadDataGrid(){
+	if (!$this->ion_auth->logged_in())
+		{
+			redirect('auth/login');
+		}else{
 			  $page = isset($_POST['page'])?$_POST['page']:1; // get the requested page
         $limit = isset($_POST['rows'])?$_POST['rows']:50; // get how many rows we want to have into the grid
         $sidx = isset($_POST['sidx'])?$_POST['sidx']:'id'; // get index row - i.e. user click to sort
@@ -96,10 +100,21 @@ class Sekolah extends CI_Controller{
         }
         //return $responce;
         echo json_encode($responce);
+        }
   }
 
   function submit(){
-		$param =  $this->input->post('param');
-		$this->MSekolah->update($param);
+	  if($this->input->post("param")>0){
+		  $param =  $this->input->post('param');
+		  if($this->input->post("action")==="akan"){
+					$this->MSekolah->will_be_visited($param);
+		  }else if($this->input->post("action")==="telah"){
+			  $this->MSekolah->has_visited($param);
+		  }else{
+			  return false;
+		  }
+	  }else{
+			return false;
+	  }
   }
 }

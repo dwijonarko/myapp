@@ -15,12 +15,20 @@ class MSekolah extends CI_Model{
     return $query->result();
   }
 
-  function update($param){
+  function will_be_visited($param){
 		$id = explode(',',$param);
 		foreach($id as $value) {
-					$sql_string = "UPDATE Sekolah SET keterangan= IF(keterangan='dikunjungi',NULL,'dikunjungi') WHERE id=$value";
+					$sql_string = "UPDATE Sekolah SET keterangan= IF(keterangan='Akan Dikunjungi',NULL,'Akan Dikunjungi') WHERE id=$value";
 					$this->db->query($sql_string);
 		}
+  }
 
+    function has_visited($param){
+		$id = explode(',',$param);
+		foreach($id as $value) {
+					$sql_string = "UPDATE Sekolah SET keterangan= IF(keterangan='Akan Dikunjungi','Telah Dikunjungi','Akan Dikunjungi') WHERE id=$value";
+					$this->db->query($sql_string);
+					echo $sql_string;
+		}
   }
 }

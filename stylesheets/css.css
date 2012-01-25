@@ -1,27 +1,13 @@
-body{
-	font-family:arial, Helvetica;
-	font-size:13px;
-}
-fieldset{
-	margin-top:20px;
-	padding-left:10px;
-}
-legend{
-	font-weight:bold;
-	font-size:15px;
-}
-#content{
-	width:1000px;
-	margin:auto;
-	padding :10px 0px 10px 0px;
 
-}
 #center{
 	position:relative;
 	text-align:center;
 	align:center;
 	border-bottom:1px dotted;
 	margin:15px 0 10px 0;
+}
+.bottom-nav{
+	padding-top:10px;
 }
 .table_input{
 	 font-family: arial,helvetica;
@@ -35,6 +21,7 @@ legend{
 .left_td{
 	width:150px;
 }
+
 .buttons {
     float: left;
     padding-bottom: 20px;
@@ -186,7 +173,7 @@ label {
     border: 1px solid #b9bdc1;
     background: #E9E7E5;
     }
-.select{
+.dropdown{
     font-family: Arial, Verdana;
     font-size: 13px;
     padding: 5px;
@@ -211,13 +198,6 @@ label {
     -webkit-border-radius: 7px;
     border-radius: 7px;
     }
-
-
-
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    font-size:13px;
-}
 .info, .success, .warning, .error, .validation {
     border: 1px solid;
     margin: 10px 0px 0px 5px;
@@ -244,4 +224,8 @@ body{
     color: #D8000C;
     background-color: #FFBABA;
     background-image: url('images/error.png');
+}
+.highlight_row {
+   background-color:#FEEFB3 !important;
+		background-image: none;
 }

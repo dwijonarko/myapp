@@ -1,0 +1,18 @@
+body{
+	font-family:arial, Helvetica;
+	font-size:13px;
+}
+fieldset{
+	margin-top:20px;
+	padding-left:10px;
+}
+legend{
+	font-weight:bold;
+	font-size:15px;
+}
+#content{
+	width:1000px;
+	margin:auto;
+	padding :10px 0px 10px 0px;
+
+}

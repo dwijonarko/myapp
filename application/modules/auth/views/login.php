@@ -20,7 +20,7 @@
 <div id="login-holder">
 	<!-- start logo -->
 	<div id="logo-login">
-		<a href="index.html"><img src="<?php echo base_url()?>images/shared/logo.png" width="156" height="40" alt="" /></a>
+		<a href="index.html"><img src="<?php echo base_url()?>images/shared/logo-trans.png" height="70" alt="" /></a>
 	</div>
 	<!-- end logo -->
 	<div class="clear"></div>

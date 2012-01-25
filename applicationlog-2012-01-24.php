@@ -90,3 +90,4 @@ ERROR - 2012-01-24 16:03:59 --> Severity: Notice  --> Use of undefined constant 
 ERROR - 2012-01-24 16:03:59 --> Severity: Warning  --> Division by zero /home/dudu/public_html/myapp/application/views/layouts/sekolah.php 77
 ERROR - 2012-01-24 16:03:59 --> Severity: Notice  --> Use of undefined constant logout - assumed 'logout' /home/dudu/public_html/myapp/application/views/layouts/sekolah.php 77
 ERROR - 2012-01-24 16:03:59 --> Severity: Warning  --> Division by zero /home/dudu/public_html/myapp/application/views/layouts/sekolah.php 77
+ERROR - 2012-01-24 16:07:06 --> Severity: Notice  --> Undefined index: _search /home/dudu/public_html/myapp/application/modules/sekolah/controllers/sekolah.php 33

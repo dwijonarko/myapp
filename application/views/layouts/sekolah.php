@@ -7,7 +7,9 @@
         <link type="text/css" href="<?php echo base_url()?>stylesheets/ui.jqgrid.css" rel="stylesheet" />
         <link type="text/css" href="<?php echo base_url()?>stylesheets/jquery.searchFilter.css" rel="stylesheet" />
         <link type="text/css" href="<?php echo base_url() ?>stylesheets/screen.css"  rel="stylesheet" media="screen" title="default" />
-        <script src="<?php echo base_url() ?>javascripts/jquery.min.js" type="text/javascript"></script>
+        <link type="text/css" href="<?php echo base_url() ?>stylesheets/css.css"  rel="stylesheet" media="screen" title="default" />
+
+                <script src="<?php echo base_url() ?>javascripts/jquery.min.js" type="text/javascript"></script>
         <script src="<?php echo base_url() ?>javascripts/jquery-ui.min.js" type="text/javascript"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>javascripts/jqgrid/js/i18n/grid.locale-en.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>javascripts/jqgrid/jquery.jqGrid.min.js"></script>
@@ -26,7 +28,7 @@
 
 	<!-- start logo -->
 	<div id="logo">
-	<a href=""><img src="<?php echo base_url() ?>images/shared/logo.png" width="156" height="40" alt="" /></a>
+	<a href=""><img src="<?php echo base_url() ?>images/shared/logo-trans.png" height="70" alt="" /></a>
 	</div>
 	<!-- end logo -->
 
