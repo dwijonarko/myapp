@@ -13,8 +13,8 @@
         <script src="<?php echo base_url() ?>javascripts/jquery-ui.min.js" type="text/javascript"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>javascripts/jqgrid/js/i18n/grid.locale-en.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>javascripts/jqgrid/jquery.jqGrid.min.js"></script>
-        <script src="<?php echo base_url() ?>javascripts/sekolah.js" type="text/javascript"> </script>
-        <title>Daftar SMA SMK se Jawa Timur</title>
+
+        <title>Politeknik Kota Malang</title>
 				<!--[if IE]>
 				<link rel="stylesheet" media="all" type="text/css" href="stylesheets/pro_dropline_ie.css" />
 				<![endif]-->
@@ -110,9 +110,9 @@
 		<div class="table">
 
 		<ul class="select">
-			<li><a href="#nogo"><b>Penerimaan Mahasiswa Baru</b><!--[if IE 7]><!--></a><!--<![endif]--></li>
+		<li><a href="<?php echo site_url()?>/pmb/admin"><b>Penerimaan Mahasiswa Baru</b><!--[if IE 7]><!--></a><!--<![endif]--></li>
 		<div class="nav-divider">&nbsp;</div>
-			<li><a href="#nogo"><b>Daftar Sekolah</b><!--[if IE 7]><!--></a><!--<![endif]--></li>
+		<li><a href="<?php echo site_url()?>/sekolah"><b>Daftar Sekolah</b><!--[if IE 7]><!--></a><!--<![endif]--></li>
 		<div class="nav-divider">&nbsp;</div>
 			<li><a href="#nogo"><b>Categories</b><!--[if IE 7]><!--></a><!--<![endif]-->	</li>
 		<div class="nav-divider">&nbsp;</div>

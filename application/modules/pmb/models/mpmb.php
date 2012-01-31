@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Mpmb extends CI_Model{
-	private $prodi	= array( "-"=>"Plih Jurusan","TI"=>"Teknik Informatika", "TM"=>"Teknik Mekatronika","TT"=>"Teknik Telekomunikasi");
+	private $prodi	= array( "-"=>"Plih Jurusan","TI"=>"Teknik Informatika (D3)", "TM"=>"Teknik Mekatronika (D3)","TT"=>"Teknik Telekomunikasi (D3)","TAB_1"=>"Teknik Alat Berat (D1)","TAB_3"=>"Teknik Alat Berat (D3)");
 	private	$jurusan_sma= array("IPA"=>"IPA","IPS"=>"IPS","lainnya"=>"Lainnya");
 	private $agama = array("ISLAM" => "ISLAM","KRISTEN"=> "KRISTEN","KATOLIK"=> "KATOLIK","HINDU"=>"HINDU","BUDHA"=>"BUDHA","LAIN"	=>"LAINNYA");
 	private $months= array("1"=>"Januari","2"=>"Februari","3"=>"Maret","4"=>"April","5"=>"Mei","6"=>"Juni","7"=>"Juli","8"=>"Agustus","9"=>"September","10"=>"Oktober","11"=>"November","12"=>"Desember");
@@ -259,6 +259,8 @@ class Mpmb extends CI_Model{
 			'pilihan_1' 	=> $this->input->post('pilihan_1') ,
 		 	'pilihan_2' 	=> $this->input->post('pilihan_2') ,
 		 	'pilihan_3' 	=> $this->input->post('pilihan_3') ,
+		 	'pilihan_4' 	=> $this->input->post('pilihan_4') ,
+		 	'pilihan_5' 	=> $this->input->post('pilihan_5') ,
 			'nama_lengkap' 	=> $this->input->post('nama_lengkap'),
 			'jenis_kelamin' => $this->input->post('jenis_kelamin'),
 			'tempat_lahir' 	=> $this->input->post('tempat_lahir'),
@@ -297,9 +299,6 @@ class Mpmb extends CI_Model{
 
 		if ($query->num_rows() > 0){
 			$row = $query->row();
-
-
-
 			$data['header']		= "FORMULIR";
 			$data['subheader'] 	= "PENDAFTARAN MAHASISWA BARU <br> POLITEKNIK KOTA MALANG";
 			$data['no_dokumen']	= "FRM.BAAK.05.01.00";
@@ -310,6 +309,8 @@ class Mpmb extends CI_Model{
 			$data['pilihan_1'] = $this->prodi[$row->pilihan_1];
 			$data['pilihan_2'] = $this->prodi[$row->pilihan_2];
 			$data['pilihan_3'] = $this->prodi[$row->pilihan_3];
+			$data['pilihan_4'] = $this->prodi[$row->pilihan_4];
+			$data['pilihan_5'] = $this->prodi[$row->pilihan_5];
 			$data['nama_lengkap'] = $row->nama_lengkap;
 			$data['jenis_kelamin'] = $this->kelamin[$row->jenis_kelamin];
 			$data['tempat_lahir'] = $row->tempat_lahir;

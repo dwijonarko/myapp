@@ -34,6 +34,9 @@
 			<tr>
 				<td>1. <?php echo $pilihan_1?></td><td>2. <?php echo $pilihan_2?></td><td>3. <?php echo $pilihan_3?></td>
 			</tr>
+			<tr>
+				<td>4. <?php echo $pilihan_4?></td><td>5. <?php echo $pilihan_5?></td>
+			</tr>
 		</table>
 	</fieldset>
 
@@ -94,7 +97,7 @@
 				<td class="field">Pekerjaan Ibu </td><td class="separator">:&nbsp;</td><td><?php echo $pekerjaan_ibu ?></td>
 			</tr>
 			<tr>
-				<td class="field">Alamat Orang Tua / Wali </td><td class="separator">:&nbsp;</td><td><?php echo $alamat_orang_tua ?></td>
+				<td class="field">Alamat Orang Tua</td><td class="separator">:&nbsp;</td><td><?php echo $alamat_orang_tua ?></td>
 			</tr>
 			<tr>
 				<td class="field">Telp. HP </td><td class="separator">:&nbsp;</td><td><?php echo $no_telp_orang_tua ?></td>

@@ -1,3 +1,4 @@
+        <script src="<?php echo base_url() ?>javascripts/sekolah.js" type="text/javascript"> </script>
 	    <div id="content">
 	        <table id="list1"></table> <!--Grid table-->
 	        <div id="pager1"></div>  <!--pagination div-->
