@@ -50,8 +50,8 @@ class Pmb extends CI_Controller{
 	public function admin(){
 		if ($this->ion_auth->logged_in()){
 							$this->template
-					->title('POLTEKOM', 'Daftar SMK dan SMA se Jawa Timur')
-					->set(array('header' => 'Daftar SMK dan SMA se Jawa Timur'))
+					->title('POLTEKOM', 'Daftar Calon Mahasiswa Baru')
+					->set(array('header' => 'Daftar Calon Mahasiswa Baru'))
 					->set_layout('sekolah') // application/views/layouts/two_col.php
 					->build('show'); // views/welcome_message
 		}else{

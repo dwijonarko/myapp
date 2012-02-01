@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Internet Dreams</title>
+	<title>Penerimaan Mahasiswa Baru | Politeknik Kota Malang</title>
 	<link type="text/css" href="<?php echo base_url() ?>stylesheets/screen.css"  rel="stylesheet" media="screen" title="default" />
 	<script src="<?php echo base_url() ?>javascripts/jquery.min.js" type="text/javascript"></script>
 	<!-- Custom jquery scripts -->

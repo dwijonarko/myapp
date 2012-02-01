@@ -15,7 +15,7 @@
                     ],
                     rownumbers:true,
                     rowNum:10,
-	                    autowidth: true,
+	                    autowidth: true,diting
                     height: "auto",
                     rowList:[10,20,30],
                     pager:"#pager1",

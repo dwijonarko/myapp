@@ -23,12 +23,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		//$this->load->library('pdf');
-		/*$file_pdf = */ $this->load->view('welcome_message');//Save as variable
-		//$this->pdf->pdf_create($file_pdf,'welcome');
-		$this->template
-					->set_layout('default') // application/views/layouts/two_col.php
-					->build('welcome_message'); // views/welcome_message
+		redirect('auth/login','refresh');
 	}
 }
 
