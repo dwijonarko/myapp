@@ -29,6 +29,9 @@
 				<tr>
 					<td class="left_td">Pilihan 4</td><td>:</td><td><?php echo form_dropdown("pilihan_4",$jurusan,set_value("pilihan_4"),"class='dropdown'")?><?php echo form_error('pilihan_4'); ?></td>
 				</tr>
+				<tr>
+					<td class="left_td">Pilihan 5</td><td>:</td><td><?php echo form_dropdown("pilihan_5",$jurusan,set_value("pilihan_5"),"class='dropdown'")?><?php echo form_error('pilihan_5'); ?></td>
+				</tr>
 			</table>
 		</fieldset>
 		<fieldset>

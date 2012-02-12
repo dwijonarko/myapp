@@ -32,7 +32,7 @@ class Pmb extends CI_Controller{
 			$output=$this->load->view('pmb/view_data',$data,TRUE);
 
 			//echo $output;
-			//$this->pdf->pdf_create($output,'form_pmb_'.$data['no_pendaftaran'],true);
+			$this->pdf->pdf_create($output,'form_pmb_'.$data['no_pendaftaran'],true);
 
 		}else{
 			redirect(redirect(site_url().'/pmb','refresh'));
@@ -123,7 +123,7 @@ class Pmb extends CI_Controller{
 	$i=0;
 	foreach($query as $row) {
 	    $responce->rows[$i]['id']=$row->id;
-	    $responce->rows[$i]['cell']=array($row->no_pendaftaran,$row->nama_lengkap,$row->no_telp,$row->pilihan_1,$row->asal_sekolah);
+	    $responce->rows[$i]['cell']=array($row->no_pendaftaran,$row->nama_lengkap,$row->no_telp,$row->pilihan_1,$row->asal_sekolah,$row->no_pendaftaran);
 	    //$responce->rows[$i]['cell']=array("1","2","3","4");
 	    $i++;
 	}

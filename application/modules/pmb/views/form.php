@@ -4,6 +4,9 @@
 		<title>PENDAFTARAN MAHASISWA BARU - POLITEKNIK KOTA MALANG</title>
 		<link rel="stylesheet" href="<?php echo base_url() ?>stylesheets/report.css" type="text/css"  media="screen" /></link>
 		<script src="<?php echo base_url() ?>javascripts/jquery.min.js" type="text/javascript"></script>
+		<style>
+			em {font-size:85%}
+		</style>
 	</head>
 	<body>
 	<div id="content">
@@ -29,7 +32,7 @@
 	</tr>
 	</table>
 	<fieldset>
-	<legend>I. Program Studi Pilihan</legend>
+	<legend>I. Program Studi Pilihan | <em>( Isi dengan angka sesuai program studi pilihan pada kotak yang tersedia )</em></legend>
 		<table>
 			<tr>
 				<td>[...] Teknik Informatika</td>
@@ -61,13 +64,9 @@
 				<td class="field">Alamat Asal </td><td class="separator">:&nbsp;</td><td></td>
 			</tr>
 			<tr><td style="border-bottom:none;"></td><td class="separator">&nbsp;</td><td></tr>
-			<tr><td style="border-bottom:none;"></td><td class="separator">&nbsp;</td><td></tr>
-			<tr><td style="border-bottom:none;"></td><td class="separator">&nbsp;</td><td></tr>
 			<tr>
 				<td class="field">Alamat Sekarang </td><td class="separator">:&nbsp;</td><td></td>
 			</tr>
-			<tr><td style="border-bottom:none;"></td><td class="separator">&nbsp;</td><td></tr>
-			<tr><td style="border-bottom:none;"></td><td class="separator">&nbsp;</td><td></tr>
 			<tr><td style="border-bottom:none;"></td><td class="separator">&nbsp;</td><td></tr>
 			<tr>
 				<td class="field">Telp./HP </td><td class="separator">:&nbsp;</td><td></td>
@@ -108,8 +107,6 @@
 				<td class="field">Alamat Orang Tua </td><td class="separator">:&nbsp;</td><td></td>
 			</tr>
 			<tr><td style="border-bottom:none;"></td><td class="separator">&nbsp;</td><td></tr>
-			<tr><td style="border-bottom:none;"></td><td class="separator">&nbsp;</td><td></tr>
-			<tr><td style="border-bottom:none;"></td><td class="separator">&nbsp;</td><td></tr>
 			<tr>
 				<td class="field">Telp. HP </td><td class="separator">:&nbsp;</td><td></td>
 			</tr>
@@ -123,15 +120,13 @@
 				<td class="field">Alamat Wali </td><td class="separator">:&nbsp;</td><td></td>
 			</tr>
 			<tr><td style="border-bottom:none;"></td><td class="separator">&nbsp;</td><td></tr>
-			<tr><td style="border-bottom:none;"></td><td class="separator">&nbsp;</td><td></tr>
-			<tr><td style="border-bottom:none;"></td><td class="separator">&nbsp;</td><td></tr>
 			<tr>
 				<td class="field">Telp. HP </td><td class="separator">:&nbsp;</td><td></td>
 			</tr>
 		</table>
 	</fieldset>
 	<fieldset >
-	<legend>IV. Biaya Pendidikan</legend>
+	<legend>IV. Biaya Pendidikan | <em>( Berikan tanda v pada kolom yang sesuai )</em></legend>
 		Sumber biaya pendidikan selama kuliah :<br>
 		<table><tr><td colspan="2">
 		<?php
@@ -149,7 +144,7 @@
 		  <tr><td colspan="2">&nbsp;</td></tr><tr><td class="field">Biaya Lainnya</td><td>:&nbsp;</td></tr></table>
 	</fieldset>
 	<fieldset>
-	<legend>V. Lain - lain</legend>
+	<legend>V. Lain - lain | <em>( Berikan tanda v pada kolom yang sesuai )</em></legend>
 	Mendapatkan info POLTEKOM dari :<br>
 	<table>
 		<tr>
