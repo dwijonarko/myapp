@@ -17,7 +17,7 @@
 				<link rel="stylesheet" media="all" type="text/css" href="stylesheets/pro_dropline_ie.css" />
 				<![endif]-->
 	</head>
-	<body onload="initialize()" onunload="GUnload()">
+	<body onload="initialize()" onunload="GUnload()">>
 <!-- Start: page-top-outer -->
 <div id="page-top-outer">
 
@@ -29,7 +29,31 @@
 	<a href=""><img src="<?php echo base_url() ?>images/shared/logo-trans.png" height="70" alt="" /></a>
 	</div>
 	<!-- end logo -->
-	<div class="clear"></div>
+
+	<!--  start top-search -->
+	<div id="top-search">
+		<table border="0" cellpadding="0" cellspacing="0">
+		<tr>
+		<td><input type="text" value="Search" onblur="if (this.value=='') { this.value='Search'; }" onfocus="if (this.value=='Search') { this.value=''; }" class="top-search-inp" /></td>
+		<td>
+
+		<select  class="styledselect">
+			<option value="">All</option>
+			<option value="">Products</option>
+			<option value="">Categories</option>
+			<option value="">Clients</option>
+			<option value="">News</option>
+		</select>
+
+		</td>
+		<td>
+		<input type="image" src="<?php echo base_url() ?>images/shared/top_search_btn.gif"  />
+		</td>
+		</tr>
+		</table>
+	</div>
+ 	<!--  end top-search -->
+ 	<div class="clear"></div>
 
 </div>
 <!-- End: page-top -->
@@ -49,7 +73,7 @@
 			<?php if ($this->ion_auth->logged_in()) {
 			echo "
 			<div class=\"nav-divider\">&nbsp;</div>
-			<div class=\"showhide-account\"><img src=\"".base_url()."images/shared/nav/nav_myaccount.gif\" width=\"93\" height=\"14\" alt=\"\" /></div>
+			<div class=\"showhide-account\"><img src=\"<?php echo base_url() ?>images/shared/nav/nav_myaccount.gif\" width=\"93\" height=\"14\" alt=\"\" /></div>
 			<div class=\"nav-divider\">&nbsp;</div>
 			<a href=\"".site_url()."/auth/logout\" id=\"logout\">
 			<img src=\"".base_url()."images/shared/nav/nav_logout.gif\" width=\"64\" height=\"14\" alt=\"\" />
@@ -70,7 +94,7 @@
 		<li><a href=\"".site_url()."/pmb/admin\"><b>Penerimaan Mahasiswa Baru</b><!--[if IE 7]><!--></a><!--<![endif]--></li>
 		<div class=\"nav-divider\">&nbsp;</div>
 		<li><a href=\"".site_url()."/sekolah\"><b>Daftar Sekolah</b><!--[if IE 7]><!--></a><!--<![endif]--></li>
-		<div class=\"nav-divider\">&nbsp;</div>
+		<div class=\"nav-divider\">&nbsp;</div>	
 		";}
 		?>
 		</ul>

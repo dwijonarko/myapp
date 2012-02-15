@@ -1,9 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Mpmb extends CI_Model{
-	private $prodi	= array( "-"=>"Plih Jurusan","TI"=>"Teknik Informatika (D3)", "TM"=>"Teknik Mekatronika (D3)","TT"=>"Teknik Telekomunikasi (D3)","TAB_1"=>"Teknik Alat Berat (D1)","TAB_3"=>"Teknik Alat Berat (D3)");
-	private	$jurusan_sma= array("IPA"=>"IPA","IPS"=>"IPS","lainnya"=>"Lainnya");
-	private $agama = array("ISLAM" => "ISLAM","KRISTEN"=> "KRISTEN","KATOLIK"=> "KATOLIK","HINDU"=>"HINDU","BUDHA"=>"BUDHA","LAIN"	=>"LAINNYA");
+	private $prodi	= array( "-"=>"Plih Jurusan","TI"=>"Teknik Informatika (D3)",
+"TM"=>"Teknik Mekatronika (D3)","TT"=>"Teknik Telekomunikasi
+(D3)","B1"=>"Teknik Alat Berat (D1)","B3"=>"Teknik Alat Berat (D3)");
+	private	$jurusan_sma= array("-"=>"Plih Jurusan","IPA"=>"IPA","IPS"=>"IPS","lainnya"=>"Lainnya");
+	private $agama = array("-"=>"Plih Agama","ISLAM" => "ISLAM","KRISTEN"=> "KRISTEN","KATOLIK"=> "KATOLIK","HINDU"=>"HINDU","BUDHA"=>"BUDHA","LAIN"	=>"LAINNYA");
 	private $months= array("1"=>"Januari","2"=>"Februari","3"=>"Maret","4"=>"April","5"=>"Mei","6"=>"Juni","7"=>"Juli","8"=>"Agustus","9"=>"September","10"=>"Oktober","11"=>"November","12"=>"Desember");
 	private $kelamin=array("L"=>"Laki-Laki","P"=>"Perempuan");
 	function __construct(){
@@ -37,7 +39,7 @@ class Mpmb extends CI_Model{
 
 		$data['month']=$this->months;
 
-		for ($i=1980;$i<=1995;$i++){
+		for ($i=1980;$i<=1997;$i++){
 			$data['year'][$i]=$i;
 		}
 
@@ -47,8 +49,8 @@ class Mpmb extends CI_Model{
 		$data['input_asal_sekolah']		= array('name'=>'asal_sekolah', 'size'=>50,'class'=>'input','value'=>set_value('asal_sekolah'));
 		$data['input_tahun_lulus']		= array('name'=>'tahun_lulus', 'size'=>20,'class'=>'input','value'=>set_value('tahun_lulus'));
 		$data['input_nun']						= array('name'=>'nilai_un','size'=>15,'class'=>'input','value'=>set_value('nilai_un'));
-		$data['input_alamat_asal']		= array('name'=>'alamat_asal', 'rows'=>5,'cols'=>100,'class'=>'input','value'=>set_value('alamat_asal'));
-		$data['input_alamat_sekarang']= array('name'=>'alamat_sekarang', 'rows'=>5,'cols'=>100,'class'=>'input','value'=>set_value('alamat_sekarang'));
+		$data['input_alamat_asal']		= array('name'=>'alamat_asal', 'rows'=>5,'cols'=>80,'class'=>'input','value'=>set_value('alamat_asal'));
+		$data['input_alamat_sekarang']= array('name'=>'alamat_sekarang', 'rows'=>5,'cols'=>80,'class'=>'input','value'=>set_value('alamat_sekarang'));
 		$data['input_no_telp']				= array('name'=>'no_telp', 'size'=>20,'class'=>'input','value'=>set_value('no_telp'));
 		$data['input_email']					= array('name'=>'email', 'size'=>50,'class'=>'input','value'=>set_value('email'));
 		$data['input_nama_ayah']			= array('name'=>'nama_ayah', 'size'=>50,'class'=>'input','value'=>set_value('nama_ayah'));
@@ -57,9 +59,9 @@ class Mpmb extends CI_Model{
 		$data['input_pekerjaan_ayah']	= array('name'=>'pekerjaan_ayah', 'size'=>50,'class'=>'input','value'=>set_value('pekerjaan_ayah'));
 		$data['input_pekerjaan_ibu']	= array('name'=>'pekerjaan_ibu', 'size'=>50,'class'=>'input','value'=>set_value('pekerjaan_ibu'));
 		$data['input_pekerjaan_wali']	= array('name'=>'pekerjaan_wali', 'size'=>50,'class'=>'input','value'=>set_value('pekerjaan_wali'));
-		$data['input_alamat_orang_tua']	= array('name'=>'alamat_orang_tua', 'rows'=>5,'cols'=>100,'class'=>'input','value'=>set_value('alamat_orang_tua'));
+		$data['input_alamat_orang_tua']	= array('name'=>'alamat_orang_tua', 'rows'=>5,'cols'=>80,'class'=>'input','value'=>set_value('alamat_orang_tua'));
 		$data['input_no_telp_orang_tua']= array('name'=>'no_telp_orang_tua', 'size'=>20,'class'=>'input','value'=>set_value('no_telp_orang_tua'));
-		$data['input_alamat_wali']		= array('name'=>'alamat_wali', 'rows'=>5,'cols'=>100,'class'=>'input','value'=>set_value('alamat_wali'));
+		$data['input_alamat_wali']		= array('name'=>'alamat_wali', 'rows'=>5,'cols'=>80,'class'=>'input','value'=>set_value('alamat_wali'));
 		$data['input_no_telp_wali']		= array('name'=>'no_telp_wali', 'size'=>20,'class'=>'input','value'=>set_value('no_telp_wali'));
 		$data['input_jenis_kelamin']	= array('name'=>'jenis_kelamin','class'=>'input');
 		$data['input_jenis_biaya']		= array('name'=>'jenis_biaya[]','class'=>'input');
@@ -85,6 +87,16 @@ class Mpmb extends CI_Model{
 		array(
 							'field'   => 'pilihan_3',
 							'label'   => 'Pilihan 3',
+							'rules'   => 'exact_length[2]|xss_clean',
+		),
+				array(
+							'field'   => 'pilihan_4',
+							'label'   => 'Pilihan 4',
+							'rules'   => 'exact_length[2]|xss_clean',
+		),
+		array(
+							'field'   => 'pilihan_5',
+							'label'   => 'Pilihan 5',
 							'rules'   => 'exact_length[2]|xss_clean',
 		),
 		array(
@@ -120,7 +132,7 @@ class Mpmb extends CI_Model{
 		array(
 							'field'   => 'agama',
 							'label'   => 'agama',
-							'rules'   => 'xss_clean',
+							'rules'   => 'exact_length[2]|xss_clean',
 		),
 		array(
 							'field'   => 'alamat_asal',
@@ -155,7 +167,7 @@ class Mpmb extends CI_Model{
 		array(
 							'field'   => 'jurusan_sma',
 							'label'   => 'Jurusan SMA',
-							'rules'   => 'xss_clean',
+							'rules'   => 'exact_length[2]|xss_clean',
 		),
 		array(
 							'field'   => 'nilai_un',
@@ -241,7 +253,7 @@ class Mpmb extends CI_Model{
 		);
 		$this->form_validation->set_message('required', '%s wajib diisi');
 		$this->form_validation->set_message('min_length', '%s minimal 2 karakter');
-		$this->form_validation->set_message('exact_length', 'Pilih jurusan dahulu');
+		$this->form_validation->set_message('exact_length', 'Pilih dahulu');
 		return $this->form_validation->set_rules($config);
 
 	}

@@ -7,8 +7,19 @@ class Pmb extends CI_Controller{
 	}
 
 	public function index(){
+			$this->template
+					->title('POLTEKOM', 'Penerimaan Mahasiswa Baru')
+					->set(array('header' => 'Penerimaan Mahasiswa Baru'))
+					->set_layout('sekolah')
+					->build('index');		}
+
+	public function input(){
 		$data = $this->mpmb->general();
-		$this->load->view('input_data',$data);
+			$this->template
+					->title('POLTEKOM', 'Daftar Calon Mahasiswa Baru')
+					->set(array('header' => 'Daftar Calon Mahasiswa Baru'))
+					->set_layout('sekolah') // application/views/layouts/two_col.php
+					->build('input_data',$data);
 	}
 
 	public function submit(){
@@ -19,7 +30,11 @@ class Pmb extends CI_Controller{
 				redirect(site_url().'/pmb/success/'.$this->input->post('no_pendaftaran'));
 			}else{
 				$data = $this->mpmb->general();
-				$this->load->view('input_data',$data);
+				$this->template
+					->title('POLTEKOM', 'Daftar Calon Mahasiswa Baru')
+					->set(array('header' => 'Daftar Calon Mahasiswa Baru'))
+					->set_layout('sekolah') // application/views/layouts/two_col.php
+					->build('input_data',$data); // views/welcome_message
 			}
 		}else{
 			redirect(site_url().'/pmb','refresh');
@@ -42,14 +57,13 @@ class Pmb extends CI_Controller{
 	public function form(){
 			$data = $this->mpmb->general();
 			$output=$this->load->view('pmb/form',$data,TRUE);
-
 			//echo $output;
 			$this->pdf->pdf_create($output,'form_pmb_',true);
 	}
 
 	public function admin(){
 		if ($this->ion_auth->logged_in()){
-							$this->template
+				$this->template
 					->title('POLTEKOM', 'Daftar Calon Mahasiswa Baru')
 					->set(array('header' => 'Daftar Calon Mahasiswa Baru'))
 					->set_layout('sekolah') // application/views/layouts/two_col.php
