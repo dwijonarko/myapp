@@ -73,9 +73,9 @@ class Pmb extends CI_Controller{
 		}
 	}
 
-		function loadDataGrid(){
+	function loadDataGrid(){
 		if ($this->ion_auth->logged_in()){
-			  $page = isset($_POST['page'])?$_POST['page']:1; // get the requested page
+	$page = isset($_POST['page'])?$_POST['page']:1; // get the requested page
 	$limit = isset($_POST['rows'])?$_POST['rows']:30; // get how many rows we want to have into the grid
 	$sidx = isset($_POST['sidx'])?$_POST['sidx']:'id'; // get index row - i.e. user click to sort
 	$sord = isset($_POST['sord'])?$_POST['sord']:''; // get the direction

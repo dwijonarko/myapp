@@ -17,7 +17,7 @@
 				<link rel="stylesheet" media="all" type="text/css" href="stylesheets/pro_dropline_ie.css" />
 				<![endif]-->
 	</head>
-	<body onload="initialize()" onunload="GUnload()">
+	<body >
 <!-- Start: page-top-outer -->
 <div id="page-top-outer">
 
