@@ -32,10 +32,10 @@
 	<legend>I. Program Studi Pilihan</legend>
 		<table>
 			<tr>
-				<td>1. <?php echo $pilihan_1?></td><td>2. <?php echo $pilihan_2?></td><td>3. <?php echo $pilihan_3?></td>
+				<td>Jenjang Studi</td><td><?php echo $jenjang?></td>
 			</tr>
 			<tr>
-				<td>4. <?php echo $pilihan_4?></td><td>5. <?php echo $pilihan_5?></td>
+				<td>Program Studi</td><td><?php echo $prodi ?></td>
 			</tr>
 		</table>
 	</fieldset>

@@ -6,19 +6,17 @@
 			<legend>I. Program Studi Pilihan</legend>
 			<table class="table_input">
 				<tr>
-					<td class="left_td">Pilihan 1</td><td>:</td><td><?php echo form_dropdown("pilihan_1",$jurusan,set_value("pilihan_1"),"class='dropdown'")?><?php echo form_error('pilihan_1'); ?></td>
+					<td class="left_td">Pilih Jenjang pendidikan</td><td>:</td><td><?php echo form_radio($input_jenjang,'D-I',set_radio('jenjang', 'D-I'));?>Diploma I PVB (D-I) &nbsp; <?php echo form_radio($input_jenjang,'D-III',set_radio('jenjang', 'D-III'));?>Diploma III (D III) <?php echo form_error('jenjang');?> </td>
 				</tr>
 				<tr>
-					<td class="left_td">Pilihan 2</td><td>:</td><td><?php echo form_dropdown("pilihan_2",$jurusan,set_value("pilihan_2"),"class='dropdown'")?><?php echo form_error('pilihan_2'); ?></td>
-				</tr>
-				<tr>
-					<td class="left_td">Pilihan 3</td><td>:</td><td><?php echo form_dropdown("pilihan_3",$jurusan,set_value("pilihan_3"),"class='dropdown'")?><?php echo form_error('pilihan_3'); ?></td>
-				</tr>
-				<tr>
-					<td class="left_td">Pilihan 4</td><td>:</td><td><?php echo form_dropdown("pilihan_4",$jurusan,set_value("pilihan_4"),"class='dropdown'")?><?php echo form_error('pilihan_4'); ?></td>
-				</tr>
-				<tr>
-					<td class="left_td">Pilihan 5</td><td>:</td><td><?php echo form_dropdown("pilihan_5",$jurusan,set_value("pilihan_5"),"class='dropdown'")?><?php echo form_error('pilihan_5'); ?></td>
+					<td class="left_td">Pilih Program Studi</td><td>:</td>
+					<td>
+						<?php echo form_radio($input_prodi,'TI',set_radio('prodi', 'TI'));?>Teknik Informatika &nbsp;
+						<?php echo form_radio($input_prodi,'TT',set_radio('prodi', 'TT'));?>Teknik Telekomunikasi &nbsp;
+						<?php echo form_radio($input_prodi,'TM',set_radio('prodi', 'TM'));?>Teknik Mekatronika &nbsp;
+						<?php echo form_radio($input_prodi,'TB',set_radio('prodi', 'TB'));?>Teknik Alat Berat &nbsp;
+						<?php echo form_error('prodi');?>
+					</td>
 				</tr>
 			</table>
 		</fieldset>

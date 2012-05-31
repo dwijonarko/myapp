@@ -46,8 +46,8 @@ class Pmb extends CI_Controller{
 			$data = $this->mpmb->get_mahasiswa($no_pendaftaran);
 			$output=$this->load->view('pmb/view_data',$data,TRUE);
 
-			//echo $output;
-			$this->pdf->pdf_create($output,'form_pmb_'.$data['no_pendaftaran'],true);
+			echo $output;
+			//$this->pdf->pdf_create($output,'form_pmb_'.$data['no_pendaftaran'],true);
 
 		}else{
 			redirect(redirect(site_url().'/pmb','refresh'));
@@ -74,7 +74,7 @@ class Pmb extends CI_Controller{
 	}
 
 	function loadDataGrid(){
-		if ($this->ion_auth->logged_in()){
+	if ($this->ion_auth->logged_in()){
 	$page = isset($_POST['page'])?$_POST['page']:1; // get the requested page
 	$limit = isset($_POST['rows'])?$_POST['rows']:30; // get how many rows we want to have into the grid
 	$sidx = isset($_POST['sidx'])?$_POST['sidx']:'id'; // get index row - i.e. user click to sort
@@ -130,6 +130,8 @@ class Pmb extends CI_Controller{
 
 	if ($page > $total_pages) $page=$total_pages;
 	$query = $this->mpmb->getAllGrid($start,$limit,$sidx,$sord,$where); //add parameter to model
+
+	$responce = new stdClass();
 
 	$responce->page = $page;
 	$responce->total = $total_pages;

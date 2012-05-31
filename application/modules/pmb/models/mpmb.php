@@ -43,6 +43,8 @@ class Mpmb extends CI_Model{
 			$data['year'][$i]=$i;
 		}
 
+		$data['input_jenjang']	= array('name'=>'jenjang','class'=>'input');
+		$data['input_prodi']	= array('name'=>'prodi','class'=>'input');
 		$data['input_no_pendaftaran']	= array('name'=>'no_pendaftaran','size'=>30,'class'=>'input','value'=>set_value('no_pendaftaran'));
 		$data['input_nama_lengkap']		= array('name'=>'nama_lengkap','size'=>50,'class'=>'input','value'=>set_value('nama_lengkap'));
 		$data['input_tempat_lahir']		= array('name'=>'tempat_lahir', 'size'=>50,'class'=>'input','value'=>set_value('tempat_lahir'));
@@ -75,31 +77,6 @@ class Mpmb extends CI_Model{
 	function validate(){
 		$config = array(
 		array(
-							'field'   => 'pilihan_1',
-							'label'   => 'Pilihan 1',
-							'rules'   => 'exact_length[2]|xss_clean',
-		),
-		array(
-							'field'   => 'pilihan_2',
-							'label'   => 'Pilihan 2',
-							'rules'   => 'exact_length[2]|xss_clean',
-		),
-		array(
-							'field'   => 'pilihan_3',
-							'label'   => 'Pilihan 3',
-							'rules'   => 'exact_length[2]|xss_clean',
-		),
-				array(
-							'field'   => 'pilihan_4',
-							'label'   => 'Pilihan 4',
-							'rules'   => 'exact_length[2]|xss_clean',
-		),
-		array(
-							'field'   => 'pilihan_5',
-							'label'   => 'Pilihan 5',
-							'rules'   => 'exact_length[2]|xss_clean',
-		),
-		array(
 							'field'   => 'nama_lengkap',
 							'label'   => 'Nama Lengkap',
 							'rules'   => 'required|xss_clean',
@@ -107,6 +84,16 @@ class Mpmb extends CI_Model{
 		array(
 							'field'   => 'jenis_kelamin',
 							'label'   => 'Jenis kelamin',
+							'rules'   => 'required|xss_clean',
+		),
+		array(
+							'field'   => 'jenjang',
+							'label'   => 'Jenjang pendidikan',
+							'rules'   => 'required|xss_clean',
+		),
+		array(
+							'field'   => 'prodi',
+							'label'   => 'Program Studi',
 							'rules'   => 'required|xss_clean',
 		),
 		array(
@@ -132,7 +119,7 @@ class Mpmb extends CI_Model{
 		array(
 							'field'   => 'agama',
 							'label'   => 'agama',
-							'rules'   => 'exact_length[2]|xss_clean',
+							'rules'   => 'xss_clean',
 		),
 		array(
 							'field'   => 'alamat_asal',
@@ -167,7 +154,7 @@ class Mpmb extends CI_Model{
 		array(
 							'field'   => 'jurusan_sma',
 							'label'   => 'Jurusan SMA',
-							'rules'   => 'exact_length[2]|xss_clean',
+							'rules'   => 'xss_clean',
 		),
 		array(
 							'field'   => 'nilai_un',
@@ -268,11 +255,8 @@ class Mpmb extends CI_Model{
 
 		$data = array(
 			'no_pendaftaran'=> $this->input->post('no_pendaftaran') ,
-			'pilihan_1' 	=> $this->input->post('pilihan_1') ,
-		 	'pilihan_2' 	=> $this->input->post('pilihan_2') ,
-		 	'pilihan_3' 	=> $this->input->post('pilihan_3') ,
-		 	'pilihan_4' 	=> $this->input->post('pilihan_4') ,
-		 	'pilihan_5' 	=> $this->input->post('pilihan_5') ,
+			'jenjang' 	=> $this->input->post('jenjang') ,
+		 	'prodi' 	=> $this->input->post('prodi') ,
 			'nama_lengkap' 	=> $this->input->post('nama_lengkap'),
 			'jenis_kelamin' => $this->input->post('jenis_kelamin'),
 			'tempat_lahir' 	=> $this->input->post('tempat_lahir'),
@@ -318,11 +302,24 @@ class Mpmb extends CI_Model{
 			$data['revisi']		= "-";
 			$data['halaman']	= "1";
 			$data['no_pendaftaran'] = $row->no_pendaftaran;
+			/*
 			$data['pilihan_1'] = $this->prodi[$row->pilihan_1];
 			$data['pilihan_2'] = $this->prodi[$row->pilihan_2];
 			$data['pilihan_3'] = $this->prodi[$row->pilihan_3];
 			$data['pilihan_4'] = $this->prodi[$row->pilihan_4];
 			$data['pilihan_5'] = $this->prodi[$row->pilihan_5];
+			*/
+			$data['jenjang']=$row->jenjang;
+			if ($row->prodi == 'TI') {
+				$data['prodi']="Teknik Informatika";
+			} else if ($row->prodi == 'TT') {
+				$data['prodi']="Teknik Telekomunikasi";
+			}else if ($row->prodi == 'TM') {
+				$data['prodi']="Teknik Mekatronika";
+			}else{
+				$data['prodi']="Teknik Alat Berat";
+			}
+			
 			$data['nama_lengkap'] = $row->nama_lengkap;
 			$data['jenis_kelamin'] = $this->kelamin[$row->jenis_kelamin];
 			$data['tempat_lahir'] = $row->tempat_lahir;
@@ -359,6 +356,7 @@ class Mpmb extends CI_Model{
 
 	function getAllGrid($start,$limit,$sidx,$sord,$where){
     $this->db->select('id,no_pendaftaran,nama_lengkap,pilihan_1,asal_sekolah,no_telp');
+    $this->db->group_by('nama_lengkap');
     $this->db->limit($limit);
     if($where != NULL)$this->db->where($where,NULL,FALSE);
 	    $this->db->order_by($sidx,$sord);
